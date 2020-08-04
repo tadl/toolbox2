@@ -1,0 +1,10 @@
+<% if current_user %>
+  <h2><%= current_user.name %></h2>
+  <img style="max-height: 150px;" src="<%= current_user.avatar %>">
+  <br>
+  <%= link_to "(sign out)", signout_path, id: "sign_out" %>
+<% else %>
+  <h2>Not a User</h2>
+  <a href='/auth/google_oauth2'>Login</a>
+  <p><%= alert %></p>
+<% end %>
