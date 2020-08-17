@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'trailers/index'
+  get 'trailers/verify'
   root 'main#index'
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]

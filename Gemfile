@@ -6,6 +6,8 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'config'
+gem 'googleauth'
+gem 'google-api-client', '~> 0.8'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use postges as the database for Active Record
