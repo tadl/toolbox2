@@ -3,6 +3,7 @@ class TrailersController < ApplicationController
   require 'google/apis/youtube_v3'
 
   def index
+    @trailers = Trailer.last(10)
   end
 
   def verify
@@ -22,7 +23,7 @@ class TrailersController < ApplicationController
       status = 'no_id'
     end
     respond_to do |format|
-      format.html
+      format.js
       format.json {render json: status}
     end
   end

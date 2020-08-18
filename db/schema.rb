@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_04_162327) do
+ActiveRecord::Schema.define(version: 2020_08_18_171709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,24 @@ ActiveRecord::Schema.define(version: 2020_08_04_162327) do
     t.datetime "oauth_expires_at"
     t.string "avatar"
     t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "trailers", force: :cascade do |t|
+    t.integer "record_id"
+    t.string "added_by"
+    t.string "youtube_url"
+    t.string "release_date"
+    t.string "tile"
+    t.string "artist"
+    t.string "publisher"
+    t.text "abstract"
+    t.string "title"
+    t.integer "user_id"
+    t.boolean "cant_find", default: false
+    t.string "item_type"
+    t.text "track_list"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
