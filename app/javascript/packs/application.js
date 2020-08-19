@@ -4,10 +4,14 @@
 // that code so it'll be compiled.
 
 import 'bootstrap'
+require("jquery")
+require("animate.css")
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+
+global.$ = require('jquery')
 
 require ("custom/trailer")
 

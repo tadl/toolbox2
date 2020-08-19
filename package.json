@@ -6,8 +6,11 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
+    "animate.css": "^4.1.0",
+    "animejs": "^3.2.0",
     "bootstrap": "^4.5.1",
     "bootstrap4": "^0.0.1-security",
+    "expose-loader": "^1.0.0",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0"

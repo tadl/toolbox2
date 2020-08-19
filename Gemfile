@@ -8,6 +8,8 @@ gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'config'
 gem 'googleauth'
 gem 'google-api-client', '~> 0.8'
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use postges as the database for Active Record
