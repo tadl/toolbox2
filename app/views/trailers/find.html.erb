@@ -1,0 +1,27 @@
+<%= render 'trailer_tabs' %>
+<div class="row mt-3">
+  <div class="input-group col-sm-4">
+    <input id="trailer_search" type="text" class="form-control" placeholder="Enter Record ID" aria-label="Search for Trailer" aria-describedby="basic-addon2" value="<%= @record_id %>">
+    <div class="input-group-append">
+      <button class="btn btn-success" type="button" onclick="find_trailer()">Find / Add Trailer</button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div id="alerts" class="col-sm-5 mt-3"></div>
+</div>
+<div class="row">
+  <div id="trailer" class="col-sm-12">
+    <% if @trailer %>
+      <%= render 'trailer', t: @trailer %>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#trailer_search').on('keyup', function (e) {
+    if (e.key === 'Enter' || e.keyCode === 13) {
+      find_trailer()
+    }
+  });
+</script>

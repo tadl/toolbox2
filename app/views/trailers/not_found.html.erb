@@ -1,0 +1,10 @@
+<%= render 'trailer_tabs' %>
+<div class="mt-3">
+  <%= will_paginate @trailers, list_classes: %w(pagination justify-content-center) %>
+</div>
+<% @trailers.each do |t| %>
+  <%= render 'trailer', t: t %>
+<% end %>
+<div class="mt-3 mb-3">
+  <%= will_paginate @trailers, list_classes: %w(pagination justify-content-center) %>
+</div>

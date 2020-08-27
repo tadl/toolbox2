@@ -1,0 +1,13 @@
+<div class="mt-3">
+  <ul class="nav justify-content-center nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link <% if @page == 'index' %>active<% end %>" href="/trailers/index">Records that Need Trailers</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link  <% if @page == 'find' %>active<% end %>" href="/trailers/find">Find / Edit Trailer</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link <% if @page == 'not_found' %>active<% end %>" href="/trailers/not_found">Records with Trailers Not Found</a>
+    </li>
+  </ul>
+</div>

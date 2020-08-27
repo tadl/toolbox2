@@ -1,0 +1,11 @@
+var alert_div = "#alerts";
+<% if @status == 'success' %>
+  $('#trailer').html('<%= j render "trailer", t: @trailer %>');
+<% else %>
+  <% if @status == 'no_id' %>
+    var message = 'Please enter a valid record ID';
+  <% else %>
+    var message = 'No record found with the ID that you submitted';
+  <% end %>
+  $('#alerts').html('<div class="alert alert-danger" role="alert">'+ message +'</div>');
+<% end %>

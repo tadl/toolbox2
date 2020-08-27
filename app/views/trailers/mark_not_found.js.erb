@@ -1,0 +1,13 @@
+var target_div = "#alerts_" + <%= @record_id %>
+<% if @status != 'success' %>
+  var message = '<div class="alert alert-danger" role="alert">Something went wrong. Please try again later</div>'
+  $(target_div).html(message)
+  var div_to_show = '#form_' + <%= @record_id %>
+  $(div_to_show).show() 
+<% else %>
+  var message = '<div class="alert alert-success" role="alert">Trailer marked as not found</div>'
+  $(target_div).html(message)
+  var full_card = '#card_' + <%= @record_id %>
+  $(full_card).addClass('animate__animated animate__rollOut animate__delay-1s')
+  setTimeout(function(){ window.location.reload() }, 1400);
+<% end %>
