@@ -1,0 +1,4 @@
+:schedule:
+  fetch_trailers:
+    every: '60m'
+    class: FetchTrailers

@@ -2,6 +2,8 @@ class Trailer < ApplicationRecord
   validates :record_id, uniqueness: true
   require 'open-uri'
   require 'json'
+  require 'googleauth'
+  require 'google/apis/youtube_v3'
 
   def get_data
     url = 'http://mr-v2.catalog.tadl.org/osrf-gateway-v1?service=open-ils.search&method=open-ils.search.biblio.record.mods_slim.retrieve&locale=en-US&param=' + self.record_id.to_s
@@ -24,6 +26,34 @@ class Trailer < ApplicationRecord
       end
     else
       return false
+    end
+  end
+
+  def check_youtube
+    client = Google::Apis::YoutubeV3::YouTubeService.new
+    auth = Google::Auth::ServiceAccountCredentials.make_creds(
+      scope: ['https://www.googleapis.com/auth/youtube']  
+    )
+    client.authorization = auth
+    verification = client.list_videos('status', id: self.youtube_url)
+    if verification.items[0]
+      if verification.items[0].status.embeddable == true
+        @status = self.update_trailer
+      else
+        @status = 'This trailer is non embeddable'
+      end
+    else
+        @status = 'Invalid Youtube ID'
+    end
+  end
+
+  def update_trailer()
+    self.cant_find = false
+    if self.valid?
+      self.save!
+      return 'Trailer was successfully updated'
+    else
+      return 'Invalid Trailer'
     end
   end
 
