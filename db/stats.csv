@@ -1,0 +1,59 @@
+programsadultattendance,Adult,Program Attendance, 2011-11-01
+programsadultcount,Adult,Program Counts, 2011-11-01
+programsfamilyattendance,Family,Program Attendance, 2011-11-01
+programsfamilycount,Family,Program Counts, 2011-11-01
+programsoutreachattendance,Outreach,Program Attendance, 2011-11-01
+programsoutreachcount,Outreach,Program Counts, 2011-11-01
+programsteenattendance,Teen,Program Attendance, 2011-11-01
+programsteencount,Teen,Program Counts, 2011-11-01
+programsyouthattendance,Youth,Program Attendance, 2011-11-01
+questionsadvisorydigital,Reader's Advisory - Digital,Questions, 2011-11-01
+questionsadvisoryphone,Reader's Advisory - Phone,Questions, 2011-11-01
+questionsadvisorywalkin,Reader's Advisory - Walk-in,Questions, 2011-11-01
+questionsdirectionaldigital,Directional - Digital,Questions, 2011-11-01
+questionsdirectionalphone,Directional - Phone,Questions, 2011-11-01
+questionsdirectionalwalkin,Directional - Walk-in,Questions, 2011-11-01
+questionsreferencedigital,Reference - Digital,Questions, 2011-11-01
+questionsreferencephone,Reference - Phone,Questions, 2011-11-01
+questionsreferencewalkin,Reference - Walk-in,Questions, 2011-11-01
+illborrowingarticles,Borrowing - Articles,ILL, 2011-11-01
+illborrowingav,Borrowing - AV,ILL, 2011-11-01
+illborrowingbooks,Borrowing - Books,ILL, 2011-11-01
+illborrowingcancelled,Borrowing - Cancelled,ILL, 2011-11-01
+illborrowingfilled,Borrowing - Filled,ILL, 2011-11-01
+illborrowingmicrofilm,Borrowing - Microfilm,ILL, 2011-11-01
+illborrowingmmlloclc,Borrowing - MMLL OCLC,ILL, 2011-11-01
+illborrowingother,Borrowing - Other,ILL, 2011-11-01
+illborrowingpending,Borrowing - Pending,ILL, 2011-11-01
+illborrowingrequests,Borrowing - Requests,ILL, 2011-11-01
+illborrowingtadl,Borrowing - TADL,ILL, 2011-11-01
+illlendingmmll,Lending - MMLL,ILL, 2011-11-01
+illlendingoclc,Lending - OCLC,ILL, 2011-11-01
+questionsreferencepostal,Reference - Postal,Questions, 2011-11-01
+lawcomputeruse,Computer Use,Computer Use, 2011-11-01
+lawvisitorsemployees,Employees,Visitors, 2011-11-01
+lawvisitorslawyers,Lawyers,Visitors, 2011-11-01
+lawvisitorspublic,Public,Visitors, 2011-11-01
+lbphcircdigital,Digital,LBPH Circ, 2011-11-01
+lbphcirclocal,Local,LBPH Circ, 2011-11-01
+lbphcircregional,Regional,LBPH Circ, 2011-11-01
+meetingsmcguirepaid,McGuire - Paid,Meetings, 2011-11-01
+meetingsmcguiretadl,McGuire - TADL,Meetings, 2011-11-01
+meetingsmcguireunpaid,McGuire - Unpaid,Meetings, 2011-11-01
+meetingsrmdpaid,Study Rm D - Paid,Meetings, 2011-11-01
+meetingsrmdtadl,Study Rm D - TADL,Meetings, 2011-11-01
+meetingsrmdunpaid,Study Rm D - Unpaid,Meetings, 2011-11-01
+meetingsthirlbypaid,Thirlby - Paid,Meetings, 2011-11-01
+meetingsthirlbytadl,Thirlby - TADL,Meetings, 2011-11-01
+meetingsthirlbyunpaid,Thirlby - Unpaid,Meetings, 2011-11-01
+attendeesmcguire,McGuire,Meeting Attendees, 2011-11-01
+attendeesrmd,Study Rm D,Meeting Attendees, 2011-11-01
+attendeesthirlby,Thirlby,Meeting Attendees, 2011-11-01
+procadult,Items Processed - Adult,Items Processed, 2011-11-01
+procssc,Items Processed - Sight and Sound,Items Processed, 2011-11-01
+procyouthteen,Items Processed - Youth/Teen,Items Processed, 2011-11-01
+procmag,Items Processed - Magazines,Items Processed, 2011-11-01
+procmisc,Items Processed - Misc.,Items Processed, 2011-11-01
+programsyouthcount,Youth,Program Counts, 2011-11-01
+programsearlyattendance,Youth,Early Lit Attendance, 2019-01-02
+programsearlycount,Youth,Early Lit Counts, 2019-01-02

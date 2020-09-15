@@ -1,0 +1,210 @@
+<h3>Report for <%= @department.name %> for the date
+  <span id="form_date"> 
+    <%= @date %>
+  </span>
+  <span id="current_user" style="display: none">
+    <%= current_user.id %>  
+  </span>
+</h3>
+
+<% if @department.name == "Administration" || @department.name == "Adult/Reference" || @department.name == "Talking Book Library" || @department.name == "Sight and Sound" || @department.name == "Teen Services" || @department.name == "Youth Services" || @department.name == "East Bay" || @department.name == "Kingsley" %>
+  <h2>Programs (by audience)</h2>
+  <h4 class="banner">Count</h4>
+  <div class="row">
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="programsearlycount">Early</label><input type="text" class="form-control" value="<%= check_for_value('programsearlycount', @reports) %>" id="programsearlycount"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="programsyouthcount">Youth</label><input type="text" class="form-control" value="<%= check_for_value('programsyouthcount', @reports) %>" id="programsyouthcount"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="programsteencount">Teen</label><input type="text" class="form-control" value="<%= check_for_value('programsteencount', @reports) %>" id="programsteencount"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="programsadultcount">Adult</label><input type="text" class="form-control" value="<%= check_for_value('programsadultcount', @reports) %>" id="programsadultcount"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="programsfamilycount">Family</label><input type="text" class="form-control" value="<%= check_for_value('programsfamilycount', @reports) %>" id="programsfamilycount"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="programsoutreachcount">Outreach</label><input type="text" class="form-control" value="<%= check_for_value('programsoutreachcount', @reports) %>" id="programsoutreachcount"></div>
+    </div>
+  </div>
+  <h4 class="banner">Attendees</h4>
+  <div class="row">
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="programsearlyattendance">Early</label><input type="text" class="form-control" value="<%= check_for_value('programsearlyattendance', @reports) %>" id="programsearlyattendance"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="programsyouthattendance">Youth</label><input type="text" class="form-control" value="<%= check_for_value('programsyouthattendance', @reports) %>" id="programsyouthattendance"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="programsteenattendance">Teen</label><input type="text" class="form-control" value="<%= check_for_value('programsteenattendance', @reports) %>" id="programsteenattendance"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="programsadultattendance">Adult</label><input type="text" class="form-control" value="<%= check_for_value('programsadultattendance', @reports) %>" id="programsadultattendance"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="programsfamilyattendance">Family</label><input type="text" class="form-control" value="<%= check_for_value('programsfamilyattendance', @reports) %>" id="programsfamilyattendance"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="programsoutreachattendance">Outreach</label><input type="text" class="form-control" value="<%= check_for_value('programsoutreachattendance', @reports) %>" id="programsoutreachattendance"></div>
+    </div>
+  </div>
+<% end %>
+
+<% if @department.name == "Adult/Reference" || @department.name == "Talking Book Library" || @department.name == "Sight and Sound" || @department.name == "Teen Services" || @department.name == "Youth Services" || @department.name == "East Bay" || @department.name == "Kingsley" %>
+  <h2>Questions</h2>
+  <h4 class="banner">Reference</h4>
+  <div class="row">
+    <div class="col col-xs-3">
+      <div class="form-group"><label for="questionsreferencewalkin">Walkin</label><input type="text" class="form-control" value="<%= check_for_value('questionsreferencewalkin', @reports) %>" id="questionsreferencewalkin"></div>
+    </div>
+    <div class="col col-xs-3">
+      <div class="form-group"><label for="questionsreferencephone">Phone</label><input type="text" class="form-control" value="<%= check_for_value('questionsreferencephone', @reports) %>" id="questionsreferencephone"></div>
+    </div>
+    <div class="col col-xs-3">
+      <div class="form-group"><label for="questionsreferencedigital">Digital</label><input type="text" class="form-control" value="<%= check_for_value('questionsreferencedigital', @reports) %>" id="questionsreferencedigital"></div>
+    </div>
+    <div class="col col-xs-3">
+      <div class="form-group"><label for="questionsreferencepostal">Postal</label><input type="text" class="form-control" value="<%= check_for_value('questionsreferencepostal', @reports) %>" id="questionsreferencepostal"></div>
+    </div>
+  </div>
+  <h4 class="banner">Directional</h4>
+  <div class="row">
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="questionsdirectionalwalkin">Walkin</label><input type="text" class="form-control" value="<%= check_for_value('questionsdirectionalwalkin', @reports) %>" id="questionsdirectionalwalkin"></div>
+    </div>
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="questionsdirectionalphone">Phone</label><input type="text" class="form-control" value="<%= check_for_value('questionsdirectionalphone', @reports) %>" id="questionsdirectionalphone"></div>
+    </div>
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="questionsdirectionaldigital">Digital</label><input type="text" class="form-control" value="<%= check_for_value('questionsdirectionaldigital', @reports) %>" id="questionsdirectionaldigital"></div>
+    </div>
+  </div>
+  <h4 class="banner">Reader's Advisory</h4>
+  <div class="row">
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="questionsadvisorywalkin">Walkin</label><input type="text" class="form-control" value="<%= check_for_value('questionsadvisorywalkin', @reports) %>" id="questionsadvisorywalkin"></div>
+    </div>
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="questionsadvisoryphone">Phone</label><input type="text" class="form-control" value="<%= check_for_value('questionsadvisoryphone', @reports) %>" id="questionsadvisoryphone"></div>
+    </div>
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="questionsadvisorydigital">Digital</label><input type="text" class="form-control" value="<%= check_for_value('questionsadvisorydigital', @reports) %>" id="questionsadvisorydigital"></div>
+    </div>
+  </div>
+<% end %>
+
+<% if @department.name == "Talking Book Library" %>
+  <h2>TBL Circulation</h2>
+  <div class="row">
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="lbphcirclocal">Local</label><input type="text" class="form-control" value="<%= check_for_value('lbphcirclocal', @reports) %>" id="lbphcirclocal"></div>
+    </div>
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="lbphcircregional">Regional</label><input type="text" class="form-control" value="<%= check_for_value('lbphcircregional', @reports) %>" id="lbphcircregional"></div>
+    </div>
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="lbphcircdigital">Digital</label><input type="text" class="form-control" value="<%= check_for_value('lbphcircdigital', @reports) %>" id="lbphcircdigital"></div>
+    </div>
+  </div>
+<% end %>
+
+<% if @department.name == "Interlibrary Loan" || @department.name == "East Bay" || @department.name == "Kingsley" %>
+  <h2>Interlibrary Loan</h2>
+  <h4 class="banner">Lending (Circulation)</h4>
+  <div class="row">
+    <div class="col col-xs-6">
+      <div class="form-group"><label for="illlendingmmll">MMLL</label><input type="text" class="form-control" value="<%= check_for_value('illlendingmmll', @reports) %>" id="illlendingmmll"></div>
+    </div>
+    <div class="col col-xs-6">
+      <div class="form-group"><label for="illlendingoclc">OCLC</label><input type="text" class="form-control" value="<%= check_for_value('illlendingoclc', @reports) %>" id="illlendingoclc"></div>
+    </div>
+  </div>
+  <h4 class="banner">Borrowing (Adult/Reference)</h4>
+  <div class="row">
+    <div class="col col-xs-6">
+      <div class="form-group"><label for="illborrowingrequests">Requests</label><input type="text" class="form-control" value="<%= check_for_value('illborrowingrequests', @reports) %>" id="illborrowingrequests"></div>
+    </div>
+    <div class="col col-xs-6">
+      <div class="form-group"><label for="illborrowingfilled">Filled</label><input type="text" class="form-control" value="<%= check_for_value('illborrowingfilled', @reports) %>" id="illborrowingfilled"></div>
+    </div>
+  </div>
+<% end %>
+
+<% if @department.name == "Sight and Sound" %>
+  <h2>Meeting Rooms</h2>
+  <h4 class="banner">McGuire Room</h4>
+  <div class="row">
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="meetingsmcguiretadl">TADL</label><input type="text" class="form-control" value="<%= check_for_value('meetingsmcguiretadl', @reports) %>" id="meetingsmcguiretadl"></div>
+    </div>
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="meetingsmcguirepaid">Paid</label><input type="text" class="form-control" value="<%= check_for_value('meetingsmcguirepaid', @reports) %>" id="meetingsmcguirepaid"></div>
+    </div>
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="meetingsmcguireunpaid">Unpaid</label><input type="text" class="form-control" value="<%= check_for_value('meetingsmcguireunpaid', @reports) %>" id="meetingsmcguireunpaid"></div>
+    </div>
+  </div>
+  <h4 class="banner">Thirlby Room</h4>
+  <div class="row">
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="meetingsthirlbytadl">TADL</label><input type="text" class="form-control" value="<%= check_for_value('meetingsthirlbytadl', @reports) %>" id="meetingsthirlbytadl"></div>
+    </div>
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="meetingsthirlbypaid">Paid</label><input type="text" class="form-control" value="<%= check_for_value('meetingsthirlbypaid', @reports) %>" id="meetingsthirlbypaid"></div>
+    </div>
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="meetingsthirlbyunpaid">Unpaid</label><input type="text" class="form-control" value="<%= check_for_value('meetingsthirlbyunpaid', @reports) %>" id="meetingsthirlbyunpaid"></div>
+    </div>
+  </div>
+  <h4 class="banner">Study Room D</h4>
+  <div class="row">
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="meetingsrmdtadl">TADL</label><input type="text" class="form-control" value="<%= check_for_value('meetingsrmdtadl', @reports) %>" id="meetingsrmdtadl"></div>
+    </div>
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="meetingsrmdpaid">Paid</label><input type="text" class="form-control" value="<%= check_for_value('meetingsrmdpaid', @reports) %>" id="meetingsrmdpaid"></div>
+    </div>
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="meetingsrmdunpaid">Unpaid</label><input type="text" class="form-control" value="<%= check_for_value('meetingsrmdunpaid', @reports) %>" id="meetingsrmdunpaid"></div>
+    </div>
+  </div>
+  <h4 class="banner">Attendees</h4>
+  <div class="row">
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="attendeesmcguire">McGuire</label><input type="text" class="form-control" value="<%= check_for_value('attendeesmcguire', @reports) %>" id="attendeesmcguire"></div>
+    </div>
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="attendeesthirlby">Thirlby</label><input type="text" class="form-control" value="<%= check_for_value('attendeesthirlby', @reports) %>" id="attendeesthirlby"></div>
+    </div>
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="attendeesrmd">Study Room D</label><input type="text" class="form-control" value="<%= check_for_value('attendeesrmd', @reports) %>" id="attendeesrmd"></div>
+    </div>
+  </div>
+<% end %>
+
+<% if @department.name == "Technical Services" %>
+  <h2>Technical Services</h2>
+  <h4 class="banner">Items Processed</h4>
+  <div class="row">
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="procadult">Adult</label><input type="text" class="form-control" value="<%= check_for_value('procadult', @reports) %>" id="procadult"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="procyouthteen">Youth/Teen</label><input type="text" class="form-control" value="<%= check_for_value('procyouthteen', @reports) %>" id="procyouthteen"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="procssc">SSC</label><input type="text" class="form-control" value="<%= check_for_value('procssc', @reports) %>" id="procssc"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="procmag">Magazines</label><input type="text" class="form-control" value="<%= check_for_value('procmag', @reports) %>" id="procmag"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="procmisc">Misc</label><input type="text" class="form-control" value="<%= check_for_value('procmisc', @reports) %>" id="procmisc"></div>
+    </div>
+  </div>
+<% end %>
+<div id="messages"></div>
+<button type="button" class="btn btn-success" onclick="reports_submitt()">Save</button>

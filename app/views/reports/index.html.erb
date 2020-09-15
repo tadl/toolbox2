@@ -1,0 +1,20 @@
+<h2>Soft Stats</h2>
+<div class="row">
+  <div class="form-group col-md-4">
+    <label for="department">Select Department</label>
+    <select id="department" class="form-control" onchange="reports_department_changed()">
+        <option value="none">Select Department</option>
+      <% @departments.each do |d| %>
+        <% if d.active == true %>
+          <option value="<%= d.id %>"><%= d.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </div>
+  <div id="calendar" class="col-md-6">
+  </div>
+</div>
+<div class="row">
+  <div id="report_form">
+  </div>
+</div>

@@ -3,7 +3,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-2">
-            <img class="img-fluid" src="https://catalog.tadl.org/opac/extras/ac/jacket/large/r/<%= t.record_id.to_s %>">
+            <img id="t_<%= t.record_id %>" class="img-fluid" src="https://catalog.tadl.org/opac/extras/ac/jacket/large/r/<%= t.record_id.to_s %>" onerror="bad_image('<%= t.record_id %>')">
           </div>
           <div class="col-lg-10">
             <h5 class="card-title"><%= t.title %></h5>

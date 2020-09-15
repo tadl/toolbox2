@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'reports/index'
+  get 'reports/show_calendar'
+  match'reports/show_calendar', to: 'reports#show_calendar', via: [:get, :post]
+  match'reports/show_report_form', to: 'reports#show_report_form', via: [:get, :post] 
+  get 'reports/save_report'
+  resources :stats
   root 'main#index'
   get 'trailers/index'
   get 'trailers/not_found'

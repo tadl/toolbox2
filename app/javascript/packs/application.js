@@ -14,6 +14,7 @@ require("channels")
 global.$ = require('jquery')
 
 require ("custom/trailer")
+require ("custom/reports")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

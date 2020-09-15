@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stat_id: 1
+  value: 1
+  last_edit_by: MyString
+  department_id: 1
+  report_date: 2020-09-14
+
+two:
+  stat_id: 1
+  value: 1
+  last_edit_by: MyString
+  department_id: 1
+  report_date: 2020-09-14

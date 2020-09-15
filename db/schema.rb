@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_18_171709) do
+ActiveRecord::Schema.define(version: 2020_09_14_200341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "departments", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.boolean "active"
+    t.string "short_code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.integer "stat_id"
+    t.integer "value"
+    t.string "last_edit_by"
+    t.integer "department_id"
+    t.date "report_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "staffs", force: :cascade do |t|
     t.string "provider"
@@ -23,6 +42,16 @@ ActiveRecord::Schema.define(version: 2020_08_18_171709) do
     t.datetime "oauth_expires_at"
     t.string "avatar"
     t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "stats", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.string "group_name"
+    t.date "start_date"
+    t.date "end_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -30,3 +30,7 @@ window.find_trailer = function(){
   $('#alerts').html('')
   $.post( "/trailers/find.js", {record_id: record_id } );
 }
+
+window.bad_image = function(record_id){
+  $('#t_' + record_id).hide()
+}
