@@ -1,12 +1,11 @@
-<h3>Report for <%= @department.name %> for the date
-  <span id="form_date"> 
-    <%= @date %>
-  </span>
-  <span id="current_user" style="display: none">
-    <%= current_user.id %>  
-  </span>
-</h3>
-
+<div class="row mb-3">
+  <div class="col col-xs-12">
+    <h3 class="text-center">Report for <%= @department.name %> on <%= @fancy_date %></h3>
+  </div>
+</div>
+<div id="report_date" style="display: none">
+  <%= @date %>
+</div>
 <% if @department.name == "Administration" || @department.name == "Adult/Reference" || @department.name == "Talking Book Library" || @department.name == "Sight and Sound" || @department.name == "Teen Services" || @department.name == "Youth Services" || @department.name == "East Bay" || @department.name == "Kingsley" %>
   <h2>Programs (by audience)</h2>
   <h4 class="banner">Count</h4>

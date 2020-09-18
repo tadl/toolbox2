@@ -1,8 +1,8 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
-  <%= link_to "<< prev ", url_for(request.parameters.merge(start_date: date_range.first)), remote: true, class: "prev-month-link" %>
+  <%= link_to "<< prev ", url_for(request.parameters.merge(start_date: (@start_date - 1.month))), remote: true, class: "prev-month-link" %>
     <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
-  <%= link_to " next >>", url_for(request.parameters.merge(start_date: date_range.last)), remote: true, class: "next-month-link" %>
+  <%= link_to " next >>", url_for(request.parameters.merge(start_date: (@start_date + 1.month))), remote: true, class: "next-month-link" %>
   </div>
 
   <table class="table table-striped">

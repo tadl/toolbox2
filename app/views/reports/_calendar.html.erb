@@ -1,7 +1,6 @@
-<div><strong>Select Date</strong></div>
 <div id="date">
   <%= month_calendar do |date| %>
-    <%= link_to ('/show_report_form?date='+ date.strftime("%F") +'&department_id=' + @department.id.to_s), remote: true do %>
+    <%= link_to ('/reports/show_report_form?date='+ date.strftime("%F") +'&department_id=' + @department.id.to_s), remote: true do %>
       <div style="height: 100%; width: 100% <%= check_for_report_on_date(date.strftime("%F"), @reports) %>">
         <%= date.day %> 
       </div>

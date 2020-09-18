@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_14_200341) do
+ActiveRecord::Schema.define(version: 2020_09_18_161335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,4 +86,29 @@ ActiveRecord::Schema.define(version: 2020_09_14_200341) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+
+  create_view "soft_locations", sql_definition: <<-SQL
+      SELECT departments.short_code AS shortname,
+      departments.name
+     FROM departments;
+  SQL
+  create_view "soft_statnames", sql_definition: <<-SQL
+      SELECT stats.code,
+      stats.name,
+      stats.group_name AS groupname
+     FROM stats;
+  SQL
+  create_view "soft_reporting_views", sql_definition: <<-SQL
+      SELECT reports.report_date AS daterecorded,
+      reports.created_at AS dateentered,
+      reports.updated_at AS datelastmod,
+      departments.short_code AS location,
+      reports.last_edit_by AS usercreated,
+      reports.last_edit_by AS userlastmod,
+      stats.code AS stat,
+      reports.value
+     FROM ((reports
+       JOIN departments ON ((reports.department_id = departments.id)))
+       JOIN stats ON ((reports.stat_id = stats.id)));
+  SQL
 end

@@ -39,7 +39,9 @@ task :reports_from_csv => :environment do
       report.last_edit_by = x[4]
       report.stat_id = map_stat(x[5])
       report.value = x[6].to_i
-      report.save!
+      if report.valid?
+        report.save!
+      end
     end
   end
 end

@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   get 'reports/index'
-  get 'reports/show_calendar'
   match'reports/show_calendar', to: 'reports#show_calendar', via: [:get, :post]
   match'reports/show_report_form', to: 'reports#show_report_form', via: [:get, :post] 
-  get 'reports/save_report'
+  match'reports/save_report', to: 'reports#save_report', via: [:get, :post]
   resources :stats
   root 'main#index'
   get 'trailers/index'
