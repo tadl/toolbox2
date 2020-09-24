@@ -12,6 +12,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def authenticate_super_user!
+    unless current_user && (ENV["SUPER_USERS"].split(',').include? current_user.email)
+      redirect_to root_url, :alert => Settings.error_msg.not_supper_user
+    end
+  end
+
+
   def set_headers
     headers['Access-Control-Allow-Origin'] = '*'      
   end 

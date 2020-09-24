@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TADL</title>
+    <title>TADL Toolbox</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,8 +14,12 @@
     <nav class="navbar navbar-dark bg-primary">
       <div class="container-xl">
         <a class="navbar-brand" href="#">
-          TADL
+          TADL Toolbox
         </a>
+        <% if current_user %>
+          <a class="nav-item nav-link top-link" href="/reports/index">SoftStats</a>
+          <a class="nav-item nav-link top-link" href="/trailers/index">Trailers</a>
+        <% end %>
         <% if !current_user %>
           <a href="/auth/google_oauth2" class="btn btn-success" type="button">
             Login
