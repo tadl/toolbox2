@@ -4,13 +4,7 @@
   "website": "https://www.tadl.org/",
   "require": {
     "plugins": [
-      {
-        "name": "postgres",
-        "commands": ["postgres:create $APP", "postgres:link $APP $APP"]
-      }, {
-        "name": "memcached",
-        "commands": ["memcached:create $APP", "memcached:link $APP $APP"]
-      }
+      "postgres", "memcached", "redis"
     ]
   },
   "scripts": {
