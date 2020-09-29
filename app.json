@@ -6,10 +6,5 @@
     "plugins": [
       "postgres", "memcached", "redis"
     ]
-  },
-  "scripts": {
-    "dokku": {
-      "postdeploy": "echo"
-    }
   }
 }
