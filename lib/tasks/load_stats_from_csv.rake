@@ -9,6 +9,8 @@ task :stats_from_csv => :environment do
     stat.name = x[1]
     stat.group_name = x[2]
     stat.start_date = x[3].to_date
-    stat.save!
+    if stat.valid?
+      stat.save!
+    end
   end
 end
