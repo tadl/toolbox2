@@ -1,10 +1,13 @@
 {
-  "name": "toolbox2",
-  "description": "TADL Toolbox v2",
-  "website": "https://www.tadl.org/",
-  "require": {
-    "plugins": [
-      "postgres", "memcached", "redis"
-    ]
+  "name": "tools",
+  "description": "the new toolbox",
+  "keywords": [
+    "dokku",
+    "rails"
+  ],
+  "scripts": {
+    "dokku": {
+      "postdeploy": "bundle exec rails db:migrate"
+    }
   }
 }
