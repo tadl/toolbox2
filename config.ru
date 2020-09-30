@@ -1,4 +1,7 @@
 # This file is used by Rack-based servers to start the application.
+require_relative 'config/environment'
+# Sidekiq
+require 'sidekiq/web'
 
-require ::File.expand_path('../config/environment',  __FILE__)
+run Sidekiq::Web
 run Rails.application
