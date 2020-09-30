@@ -17,9 +17,5 @@ module Toolbox2
     config.assets.enabled = true
     config.assets.version = '1.0'    
     config.assets.serve_static_assets = true
-
-    config.action_controller.asset_host = Proc.new do |source, request|
-      "#{request.protocol}#{request.host_with_port}/-"
-    end
   end
 end
