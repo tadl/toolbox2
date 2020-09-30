@@ -15,3 +15,10 @@ test:
   database: <%= ENV['APP_NAME'] %>-test
   username: postgres
   password: <%= ENV['POSTGRES_PASSWORD'] %>
+
+production:
+  adapter: postgresql
+  secret_key_base: <%= Rails.application.credentials.dig(:secret_key_base) %>
+  rails_master_key: <%= ENV['RAILS_MASTER_KEY'] %>
+  encoding: unicode
+  pool: 5 
