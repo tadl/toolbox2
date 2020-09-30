@@ -4,7 +4,13 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-  config.serve_static_assets = true
+  config.assets.enabled = true
+  config.assets.version = '1.0'    
+  config.assets.serve_static_assets = true
+
+  config.action_controller.asset_host = Proc.new do |source, request|
+    "#{request.protocol}#{request.host_with_port}/-"
+  end
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
