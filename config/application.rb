@@ -14,5 +14,12 @@ module Toolbox2
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    config.assets.enabled = true
+    config.assets.version = '1.0'    
+    config.assets.serve_static_assets = true
+
+    config.action_controller.asset_host = Proc.new do |source, request|
+      "#{request.protocol}#{request.host_with_port}/-"
+    end
   end
 end
