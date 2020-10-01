@@ -42,6 +42,7 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+yarn.lock
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
