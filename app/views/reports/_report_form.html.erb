@@ -51,7 +51,48 @@
     </div>
   </div>
 <% end %>
-
+<% if @department.name == "Administration" || @department.name == "Adult/Reference" || @department.name == "Talking Book Library" || @department.name == "Sight and Sound" || @department.name == "Teen Services" || @department.name == "Youth Services" || @department.name == "East Bay" || @department.name == "Kingsley" %>
+  <h2>Virtual Programs</h2>
+  <h4 class="banner">Count</h4>
+  <div class="row">
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="virtualprogramskidscount">Youth</label><input type="text" class="form-control" value="<%= check_for_value('virtualprogramskidscount', @reports) %>" id="virtualprogramskidscount"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="virtualprogramsteenscount">Teen</label><input type="text" class="form-control" value="<%= check_for_value('virtualprogramsteenscount', @reports) %>" id="virtualprogramsteenscount"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="virtualprogramsadultscount">Adult</label><input type="text" class="form-control" value="<%= check_for_value('virtualprogramsadultscount', @reports) %>" id="virtualprogramsadultscount"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="virtualprogramsgeneralcount">General</label><input type="text" class="form-control" value="<%= check_for_value('virtualprogramsgeneralcount', @reports) %>" id="virtualprogramsgeneralcount"></div>
+    </div>
+  </div>
+  <h4 class="banner">Attendance - Live Views Only</h4>
+  <div class="row">
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="virtualprogramskidsattendance">Youth</label><input type="text" class="form-control" value="<%= check_for_value('virtualprogramskidsattendance', @reports) %>" id="virtualprogramskidsattendance"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="virtualprogramsteensattendance">Teen</label><input type="text" class="form-control" value="<%= check_for_value('virtualprogramsteensattendance', @reports) %>" id="virtualprogramsteensattendance"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="virtualprogramsadultsattendance">Adult</label><input type="text" class="form-control" value="<%= check_for_value('virtualprogramsadultsattendance', @reports) %>" id="virtualprogramsadultsattendance"></div>
+    </div>
+    <div class="col col-xs-2">
+      <div class="form-group"><label for="virtualprogramsgeneralattendance">General</label><input type="text" class="form-control" value="<%= check_for_value('virtualprogramsgeneralattendance', @reports) %>" id="virtualprogramsgeneralattendance"></div>
+    </div>
+  </div>
+  <h4 class="banner">Recorded Virtual Programs</h4>
+  <div class="row">
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="virtualrecordedprogramcount">Count (If the original airing of this content was live do NOT record the program offered here. DO report the recorded views of the formerly live content in Library Created Virtual Program Recorded Views)</label><input type="text" class="form-control" value="<%= check_for_value('virtualrecordedprogramcount', @reports) %>" id="virtualrecordedprogramcount"></div>
+    </div>
+    <div class="col col-xs-4">
+      <div class="form-group"><label for="virtualrecordedprogramviews">Views (Do not include live views)</label><input type="text" class="form-control" value="<%= check_for_value('virtualrecordedprogramviews', @reports) %>" id="virtualrecordedprogramviews"></div>
+    </div>
+  </div>
+<% end %>
 <% if @department.name == "Adult/Reference" || @department.name == "Talking Book Library" || @department.name == "Sight and Sound" || @department.name == "Teen Services" || @department.name == "Youth Services" || @department.name == "East Bay" || @department.name == "Kingsley" %>
   <h2>Questions</h2>
   <h4 class="banner">Reference</h4>

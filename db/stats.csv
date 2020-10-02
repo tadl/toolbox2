@@ -57,3 +57,13 @@ procmisc,Items Processed - Misc.,Items Processed, 2011-11-01
 programsyouthcount,Youth,Program Counts, 2011-11-01
 programsearlyattendance,Youth,Early Lit Attendance, 2019-01-02
 programsearlycount,Youth,Early Lit Counts, 2019-01-02
+virtualprogramskidscount,Virtual Programs Offered - Kids,Program Counts - Virtual,3/1/2020
+virtualprogramsteenscount,Virtual Programs Offered - Teens,Program Counts - Virtual,3/1/2020
+virtualprogramsadultscount,Virtual Programs Offered - Adults,Program Counts - Virtual,3/1/2020
+virtualprogramsgeneralcount,Virtual Programs Offered - General,Program Counts - Virtual,3/1/2020
+virtualprogramskidsattendance,Virtual Program Attendance - Kids (live views only),Program Attendance - Virtual,3/1/2020
+virtualprogramsteensattendance,Virtual Program Attendance - Teens (live views only),Program Attendance - Virtual,3/1/2020
+virtualprogramsadultsattendance,Virtual Program Attendance - Adults (live views only),Program Attendance - Virtual,3/1/2020
+virtualprogramsgeneralattendance,Virtual Program Attendance - General (live views only),Program Attendance - Virtual,3/1/2020
+virtualrecordedprogramcount,Library Created Virtual Recorded Program Content Offered,Program Counts - Virtual Recorded,3/1/2020
+virtualrecordedprogramviews,Library Created Virtual Program Recorded Views (only recorded views),Program Views - Virtual Recorded,3/1/2020
