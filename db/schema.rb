@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_18_161335) do
+ActiveRecord::Schema.define(version: 2020_10_02_195413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "covers", force: :cascade do |t|
+    t.integer "record_id"
+    t.string "source"
+    t.integer "staff_id"
+    t.string "status"
+    t.text "title"
+    t.text "artist"
+    t.string "publisher"
+    t.string "release_date"
+    t.string "item_type"
+    t.text "track_list"
+    t.text "abstract"
+    t.string "coverart"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "departments", force: :cascade do |t|
     t.string "name"

@@ -14,6 +14,8 @@ gem 'sidekiq'
 gem 'sidekiq-scheduler'
 gem "simple_calendar", "~> 2.0"
 gem "scenic"
+gem "mini_magick"
+gem 'carrierwave', '~> 2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use postges as the database for Active Record

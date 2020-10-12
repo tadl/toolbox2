@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'covers/home'
+  get 'covers/new_cover'
+  get 'covers/not_found'
+  get 'covers/add_manually'
+  get 'covers/load_cover'
+  get 'covers/cover_upload'
+  get 'covers/mark_not_found'
   get 'reports/index'
   match'reports/show_calendar', to: 'reports#show_calendar', via: [:get, :post]
   match'reports/show_report_form', to: 'reports#show_report_form', via: [:get, :post] 
