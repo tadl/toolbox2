@@ -8,7 +8,8 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     if !current_user
-      redirect_to root_url, :alert => Settings.error_msg.not_logged_in
+      url = request.url
+      redirect_to ('/auth/google_oauth2?origin=') + url
     end
   end
 
