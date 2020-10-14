@@ -91,10 +91,10 @@ class TrailersController < ApplicationController
 
   def remove_current_trailer
     @record_id = params[:record_id]
-    trailer = Trailer.where(record_id: @record_id).first
-    if trailer
-      trailer.youtube_url = nil
-      trailer.save!
+    @trailer = Trailer.where(record_id: @record_id).first
+    if @trailer
+      @trailer.youtube_url = nil
+      @trailer.save!
       @status = 'success'
     else
       @status = 'error'

@@ -7,7 +7,7 @@ var target_div = "#alerts_" + <%= @record_id %>
 <% else %>
   var message = '<div class="alert alert-success" role="alert">Current trailer was succesfully removed</div>'
   $(target_div).html(message)
-  var full_card = '#card_' + <%= @record_id %>
-  $(full_card).addClass('animate__animated animate__zoomOut animate__delay-1s')
-  setTimeout(function(){ window.location.reload() }, 1400);
+  $('#trailer').html('<%= j render "trailer", t: @trailer %>');
+  var div_to_show = '#form_' + <%= @record_id %>
+  $(div_to_show).show() 
 <% end %>
