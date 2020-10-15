@@ -47,6 +47,9 @@
                   </div>
                 <% end %>
               </div>
+              <a class="btn btn-warning mb-3" role="button" href="https://catalog.tadl.org/main/details?id=<%= t.record_id %>" target="_blank">
+                View in Catalog
+              </a>
               <% if t.youtube_url.nil? %>
                 <a class="btn btn-primary mb-3" href="https://www.youtube.com/results?search_query=<%= CGI.escape(t.title + ' trailer') %>" target="_new" role="button">Search Youtube</a>
                 <% if t.cant_find != true %>
