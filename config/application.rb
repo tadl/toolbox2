@@ -17,5 +17,6 @@ module Toolbox2
     config.assets.enabled = true
     config.assets.version = '1.0'    
     config.assets.serve_static_assets = true
+    config.beginning_of_week = :sunday
   end
 end
