@@ -1,0 +1,92 @@
+<%= form_with(model: location, local: true) do |form| %>
+  <% if location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+      <ul>
+        <% location.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :shortname %>
+    <%= form.text_field :shortname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fullname %>
+    <%= form.text_field :fullname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sunday %>
+    <%= form.text_field :sunday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :monday %>
+    <%= form.text_field :monday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tuesday %>
+    <%= form.text_field :tuesday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wednesday %>
+    <%= form.text_field :wednesday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thursday %>
+    <%= form.text_field :thursday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :friday %>
+    <%= form.text_field :friday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :saturday %>
+    <%= form.text_field :saturday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :citystatezip %>
+    <%= form.text_field :citystatezip %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fax %>
+    <%= form.text_field :fax %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

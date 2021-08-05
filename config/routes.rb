@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :locations
   get 'covers/home'
   get 'covers/new_cover'
   get 'covers/not_found'

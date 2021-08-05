@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Locations</h1>
+
+
+    <% @locations.each do |location| %>
+      <div class="row mb-3">
+        <div class="col-sm-4">
+          <h4><%= location.fullname %></h4>
+          <img src="<%= location.image %>" class="img-fluid">
+        </div>
+        <div class="col-sm-8 mt-4">
+          <b>Shortname:</b> <%= location.shortname %>
+          <br>
+          <b>Sunday:</b> <%= location.sunday %>
+          <br>
+          <b>Monday:</b> <%= location.monday %>
+          <br>
+          <b>Tuesday:</b> <%= location.tuesday %>
+          <br>
+          <b>Wednesday:</b> <%= location.wednesday %>
+          <br>
+          <b>Thursday:</b> <%= location.thursday %>
+          <br>
+          <b>Friday:</b> <%= location.friday %>
+          <br>
+          <b>Saturday:</b> <%= location.saturday %>
+          <br>
+          <b>Address:</b> <%= location.address %>, <%= location.citystatezip %>
+          <br>
+          <b>Phone:</b> <%= location.phone %>
+          <br>
+          <b>Email:</b> <%= location.email %>
+          <br>
+
+          <% if current_user && (ENV["SUPER_USERS"].split(',').include? current_user.email) %>
+            <%= link_to 'Edit', edit_location_path(location), class: "btn btn-primary" %>
+            <%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-danger" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+<br>
+
+<%= link_to 'New Location', new_location_path %>

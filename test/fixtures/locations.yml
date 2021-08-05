@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shortname: MyString
+  fullname: MyString
+  sunday: MyString
+  monday: MyString
+  tuesday: MyString
+  wednesday: MyString
+  thursday: MyString
+  friday: MyString
+  saturday: MyString
+  address: MyString
+  citystatezip: MyString
+  phone: MyString
+  email: MyString
+  image: MyString
+
+two:
+  shortname: MyString
+  fullname: MyString
+  sunday: MyString
+  monday: MyString
+  tuesday: MyString
+  wednesday: MyString
+  thursday: MyString
+  friday: MyString
+  saturday: MyString
+  address: MyString
+  citystatezip: MyString
+  phone: MyString
+  email: MyString
+  image: MyString
