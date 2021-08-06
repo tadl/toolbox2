@@ -5,7 +5,11 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
+    if params[:group]
+      @locations = Location.where(group: params[:group]).order('id ASC')
+    else
+      @locations = Location.all.order('id ASC')
+    end
     respond_to do |format|
       format.html
       format.json {render json: {locations: @locations}}
@@ -74,6 +78,6 @@ class LocationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def location_params
-      params.require(:location).permit(:shortname, :fullname, :sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :address, :citystatezip, :phone, :email, :image)
+      params.require(:location).permit(:shortname, :fullname, :sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :address, :citystatezip, :phone, :email, :image, :fax, :group)
     end
 end
