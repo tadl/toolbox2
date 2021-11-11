@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @infraction.description %>
+</p>
+
+<p>
+  <strong>First offence:</strong>
+  <%= @infraction.first_offence %>
+</p>
+
+<p>
+  <strong>Second offence:</strong>
+  <%= @infraction.second_offence %>
+</p>
+
+<p>
+  <strong>Subsiquent offence:</strong>
+  <%= @infraction.subsiquent_offence %>
+</p>
+
+<p>
+  <strong>Track:</strong>
+  <%= @infraction.track %>
+</p>
+
+<%= link_to 'Edit', edit_infraction_path(@infraction) %> |
+<%= link_to 'Back', infractions_path %>

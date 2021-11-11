@@ -61,5 +61,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   #allow access via the following hostname(s)
-  config.hosts << "cal.lib.tadl.org"
+  config.hosts << ENV['DEV_HOSTNAME']
 end

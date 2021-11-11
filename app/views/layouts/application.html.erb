@@ -21,6 +21,7 @@
           <a class="nav-item nav-link top-link" href="/trailers/index">Trailers</a>
           <% if ENV["SUPER_USERS"].split(',').include? current_user.email %>
             <a class="nav-item nav-link top-link" href="/locations">Locations</a>
+            <a class="nav-item nav-link top-link" href="/infractions">Infractions</a>
           <% end %>
         <% end %>
         <% if !current_user %>

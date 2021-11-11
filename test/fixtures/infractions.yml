@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  first_offence: MyString
+  second_offence: MyString
+  subsiquent_offence: MyString
+  track: MyString
+
+two:
+  description: MyString
+  first_offence: MyString
+  second_offence: MyString
+  subsiquent_offence: MyString
+  track: MyString

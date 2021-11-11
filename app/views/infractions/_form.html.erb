@@ -1,0 +1,42 @@
+<%= form_with(model: infraction, local: true) do |form| %>
+  <% if infraction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(infraction.errors.count, "error") %> prohibited this infraction from being saved:</h2>
+
+      <ul>
+        <% infraction.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :first_offence %>
+    <%= form.text_field :first_offence %>
+  </div>
+
+  <div class="field">
+    <%= form.label :second_offence %>
+    <%= form.text_field :second_offence %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subsiquent_offence %>
+    <%= form.text_field :subsiquent_offence %>
+  </div>
+
+  <div class="field">
+    <%= form.label :track %>
+    <%= form.text_field :track %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

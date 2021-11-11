@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_06_140644) do
+ActiveRecord::Schema.define(version: 2021_11_11_164217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,16 @@ ActiveRecord::Schema.define(version: 2021_08_06_140644) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "infractions", force: :cascade do |t|
+    t.string "description"
+    t.string "first_offence"
+    t.string "second_offence"
+    t.string "subsiquent_offence"
+    t.string "track"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "locations", force: :cascade do |t|
     t.string "shortname"
     t.string "fullname"
@@ -60,6 +70,24 @@ ActiveRecord::Schema.define(version: 2021_08_06_140644) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "fax"
     t.string "group"
+  end
+
+  create_table "patrons", force: :cascade do |t|
+    t.string "first_name"
+    t.string "middle_name"
+    t.string "last_name"
+    t.boolean "no_name"
+    t.string "card_number"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.integer "zip"
+    t.boolean "no_address"
+    t.text "physical_description"
+    t.string "alias"
+    t.json "patronpic"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "reports", force: :cascade do |t|
