@@ -1,4 +1,5 @@
 class InfractionsController < ApplicationController
+  before_action :authenticate_super_user!
   before_action :set_infraction, only: [:show, :edit, :update, :destroy]
 
   # GET /infractions

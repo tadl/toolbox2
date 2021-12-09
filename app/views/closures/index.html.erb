@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Upcoming Closures</h1>
+<span>
+    <a href="/closures/new">
+        Create New Closure
+    </a>
+</span>
+<br>
+<% @closures.each do |c| %>
+<div class="mt-2">
+    <b>Date:</b> <%= c.closure_date.strftime("%m/%d/%Y") %>
+    <b>Reason:</b> <%= c.reasons %>
+    <b>Hours:</b> <%= c.hours %>
+    <br>
+    <b>Effected Locatons:</b>
+        <% c.locations.each do |l| %>
+            <%=location_id_to_fullname(l) %>
+        <% end  %>
+    <br>
+    <a href='/closures/edit?id=<%= c.id %>'>Edit</a>
+
+</div>
+<% end %>

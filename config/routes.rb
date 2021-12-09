@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   match'reports/show_calendar', to: 'reports#show_calendar', via: [:get, :post]
   match'reports/show_report_form', to: 'reports#show_report_form', via: [:get, :post] 
   match'reports/save_report', to: 'reports#save_report', via: [:get, :post]
+  match'closures', to: 'closures#index', via: [:get, :post]
+  match'closures/new', to: 'closures#new', via: [:get, :post]
+  match'closures/edit', to: 'closures#edit', via: [:get, :post]
+  match'closures/save', to: 'closures#save', via: [:get, :post]
+  match'closures/delete', to: 'closures#delete', via: [:get, :post]
   resources :stats
   root 'main#index'
   get 'trailers/index'

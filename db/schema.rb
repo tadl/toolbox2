@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_11_164217) do
+ActiveRecord::Schema.define(version: 2021_12_09_180507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "closures", force: :cascade do |t|
+    t.date "closure_date"
+    t.string "hours"
+    t.string "reasons"
+    t.string "locations", default: [], array: true
+  end
 
   create_table "covers", force: :cascade do |t|
     t.integer "record_id"
