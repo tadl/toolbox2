@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   match'closures/edit', to: 'closures#edit', via: [:get, :post]
   match'closures/save', to: 'closures#save', via: [:get, :post]
   match'closures/delete', to: 'closures#delete', via: [:get, :post]
+  match'closures/feed', to: 'closures#feed', via: [:get, :post]
   resources :stats
   root 'main#index'
   get 'trailers/index'

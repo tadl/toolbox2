@@ -32,6 +32,15 @@ class ClosuresController < ApplicationController
         @closure = Closure.find(params[:id])
     end
 
+    def feed
+        @closures = Closure.where('closure_date >= ?', Date.today).order('closure_date ASC')
+        @closures_by_date = sort_closures_by_date(@closures)
+        respond_to do |format|
+            format.json {render json: {exceptions: @closures_by_date}}
+        end
+    end
+
+
     def delete
         @closure = Closure.find(params[:id].to_i)
         @closure.destroy
@@ -44,6 +53,30 @@ class ClosuresController < ApplicationController
     
     def closure_params
         params.permit(:closure_date, :hours, :reasons, :locations => [])
+    end
+
+    def sort_closures_by_date(closures)
+        all_dates = []
+        @closures.each do |c|
+            all_dates.push(c.closure_date)
+        end
+        closure_group = []
+        all_dates.uniq.each do |d|
+            closure_info = {}
+            closure_info['date'] = d
+            closure_info['locations'] = []
+            @closures.where(closure_date: d).each do |c|
+                c.locations.each do |l|
+                    location = {}
+                    location['id'] = l.to_i
+                    location['hours'] = c.hours
+                    location['reason'] = c.reasons
+                    closure_info['locations'].push(location)
+                end
+                closure_group.push(closure_info)
+            end
+        end
+        return closure_group.uniq
     end
 
 end
