@@ -18,7 +18,7 @@
             <%=location_id_to_fullname(l) %>
         <% end  %>
     <br>
-    <a href='/closures/edit?id=<%= c.id %>'>Edit</a>
-
+    <%= link_to 'Edit', ('/closures/edit?id=' + c.id.to_s), class: "btn btn-primary" %>
+    <%= link_to 'Destroy', {controller: "closures", action: "delete", id: c.id, format: 'js'}, data: { confirm: 'Are you sure?' },  class: "btn btn-danger", remote: true %>
 </div>
 <% end %>
