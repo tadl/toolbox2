@@ -69,6 +69,7 @@ class ClosuresController < ApplicationController
                 c.locations.each do |l|
                     location = {}
                     location['id'] = l.to_i
+                    location['shortname'] = Location.find(l.to_i).shortname
                     location['hours'] = c.hours
                     location['reason'] = c.reasons
                     closure_info['locations'].push(location)
