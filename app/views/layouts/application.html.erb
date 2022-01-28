@@ -26,9 +26,7 @@
           <% end %>
         <% end %>
         <% if !current_user %>
-          <a href="/auth/google_oauth2" class="btn btn-success" type="button">
-            Login
-          </a>
+          <%= link_to "Staff Login", "/auth/google_oauth2", method: :post, class: "top-link" %>
         <% else %>
           <span id="current_user" class="navbar-text ml-auto text-white">
             <%= current_user.name %>

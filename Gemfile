@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'config'
 gem 'googleauth'
@@ -15,6 +16,7 @@ gem 'sidekiq-scheduler'
 gem "simple_calendar", "~> 2.0"
 gem "scenic"
 gem "mini_magick"
+gem 'mechanize'
 gem 'mimemagic', '~> 0.3.10'
 gem 'carrierwave', '~> 2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

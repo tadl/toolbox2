@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'calendar/index'
+  get 'calendar/workorders'
+  get 'calendar/sign'
   resources :infractions
   resources :locations
   get 'covers/home'

@@ -62,4 +62,7 @@ Rails.application.configure do
 
   #allow access via the following hostname(s)
   config.hosts << ENV['DEV_HOSTNAME']
+  config.hosts << "cal.lib.tadl.org"
+  config.web_console.whitelisted_ips = '198.108.218.74'
+
 end
