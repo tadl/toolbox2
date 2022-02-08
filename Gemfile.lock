@@ -155,6 +155,8 @@ GEM
     faraday-rack (1.0.0)
     faraday-retry (1.0.3)
     ffi (1.15.5)
+    font-awesome-sass (5.15.1)
+      sassc (>= 1.11)
     fugit (1.5.2)
       et-orbi (~> 1.1, >= 1.1.8)
       raabro (~> 1.4)
@@ -422,6 +424,7 @@ DEPENDENCIES
   carrierwave (~> 2.0)
   config
   dotenv-rails
+  font-awesome-sass (~> 5.15.1)
   google-api-client (~> 0.8)
   googleauth
   jbuilder (~> 2.7)

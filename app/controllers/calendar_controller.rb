@@ -33,12 +33,27 @@ class CalendarController < ApplicationController
       @events.push(e)
     end
     respond_to do |format|
-      format.html
+      format.html {render layout: 'calendar'}
       format.json {render json: {events: @events}}
     end
   end
 
   def sign
+    url = 'https://live-traversearea.pantheonsite.io/events/feed/json'
+    data = JSON.parse(open(url).read)
+    @events = []
+    data.each do |e|
+      if !e['room'].empty?
+        # Only get events for McGuire, thirlby, youth, and teen
+        if e['room'].key?('124') || e['room'].key?('125') || e['room'].key?('131') || e['room'].key?('130')
+          @events.push(e)
+        end
+      end
+    end
+    respond_to do |format|
+      format.html {render layout: 'calendar'}
+      format.json {render json: {events: @events}}
+    end
   end
 
   private 

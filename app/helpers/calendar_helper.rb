@@ -25,4 +25,44 @@ module CalendarHelper
         end
     end
 
+    def today_or_tomorrow(start_date_raw)
+        start_date = start_date_raw.to_datetime
+        if start_date.to_date == Date.today
+            return "Today"
+        elsif start_date.to_date == Date.tomorrow
+            return "Tomorrow"
+        else
+            return start_date.strftime("%A") + ', ' + start_date.strftime("%B") + ' ' + start_date.day.to_s
+        end
+    end
+
+    def string_to_datetime(date_raw)
+        date = date_raw.to_datetime
+    end
+
+    def check_for_multiday(start_date, end_date)
+        if start_date.to_date != end_date.to_date
+            return today_or_tomorrow(end_date)
+        else
+            return ''
+        end
+    end
+
+    def show_arrow(room)
+        if room == '124'
+            return ('<i class="fas fa-arrow-circle-left"></i>').html_safe
+        else
+            return ('<i class="fas fa-arrow-circle-up"></i>').html_safe
+        end 
+    end
+
+    def happening_now(start_date, end_date)
+        if Time.now >= start_date.to_datetime && Time.now <= end_date.to_datetime
+            return "green"
+        else
+            return "black"
+        end
+    end
+
+
 end
