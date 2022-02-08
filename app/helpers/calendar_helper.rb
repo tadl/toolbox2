@@ -57,7 +57,7 @@ module CalendarHelper
     end
 
     def happening_now(start_date, end_date)
-        if Time.now >= start_date.to_datetime && Time.now <= end_date.to_datetime
+        if Time.now >= start_date.to_time && Time.now <= end_date.to_time
             return "green"
         else
             return "black"
