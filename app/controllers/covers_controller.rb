@@ -1,4 +1,5 @@
 class CoversController < ApplicationController
+  before_action :authenticate_user!
   def home
     @covers = Cover.where(status: 'needs cover').paginate(:page => params[:page], :per_page => 10)
   end
