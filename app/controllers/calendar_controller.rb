@@ -62,15 +62,21 @@ class CalendarController < ApplicationController
   end
 
   def featured
+    if params[:count]
+      count = params[:count].to_i
+    else
+      count = 100
+    end
     agent = Mechanize.new
     page = agent.get('https://live-traversearea.pantheonsite.io/events/month')
     event_blocks = page.css('.lc-featured-event')
     @events = []
-    event_blocks.each do |e|
+    event_blocks.first(count).each do |e|
       event = {}
       event['title'] = e.css('h2').text.strip
       event['date'] = e.css('.lc-featured-event-date').text.strip.gsub("\n",'').split(' at ')[0].strip
-      event['time'] = e.css('.lc-event-info-item--time').text.strip
+      event['start_time'] = e.css('.lc-event-info-item--time').text.strip.split(' - ')[0]
+      event['end_time'] = e.css('.lc-event-info-item--time').text.strip.split(' - ')[1]
       event['url'] = e.css('.lc-featured-event-btn').attr('href').text rescue nil
       event['image'] = e.css('.lc-featured-event-image img').attr('src').text rescue nil
       unless event['image'].nil?
