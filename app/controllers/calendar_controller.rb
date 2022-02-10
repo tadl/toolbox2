@@ -5,6 +5,10 @@ class CalendarController < ApplicationController
   end
 
   def workorders
+    unless params[:code] && params[:code] == ENV['WORKORDER_PW']
+      redirect_to root_url, :alert => "Error: Unknow Action."
+      return
+    end
     request = login(ENV['LIBCAL_USERNAME'],ENV['LIBCAL_PASSWORD'])
     agent = request[0]
     page = request[1]
