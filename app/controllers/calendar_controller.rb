@@ -61,6 +61,25 @@ class CalendarController < ApplicationController
     end
   end
 
+  def featured
+    agent = Mechanize.new
+    page = agent.get('https://live-traversearea.pantheonsite.io/events/month')
+    event_blocks = page.css('.lc-featured-event')
+    @events = []
+    event_blocks.each do |e|
+      event = {}
+      event['title'] = e.css('h2').text.strip
+      event['date'] = e.css('.lc-featured-event-date').text.strip.gsub("\n",'').split(' at ')[0].strip
+      event['time'] = e.css('.lc-event-info-item--time').text.strip
+      event['url'] = e.css('.lc-featured-event-image a').attr('href').text
+      event['image'] = e.css('.lc-featured-event-image img').attr('src').text
+      @events.push(event)
+    end
+    respond_to do |format|
+      format.json {render json: {events: @events}}
+    end
+  end
+
   private 
 
   def login(username, password)

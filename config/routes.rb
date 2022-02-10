@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'covers/cover_upload'
   get 'covers/mark_not_found'
   get 'reports/index'
+  get 'calendar/featured'
   match'reports/show_calendar', to: 'reports#show_calendar', via: [:get, :post]
   match'reports/show_report_form', to: 'reports#show_report_form', via: [:get, :post] 
   match'reports/save_report', to: 'reports#save_report', via: [:get, :post]
