@@ -71,9 +71,11 @@ class CalendarController < ApplicationController
       event['title'] = e.css('h2').text.strip
       event['date'] = e.css('.lc-featured-event-date').text.strip.gsub("\n",'').split(' at ')[0].strip
       event['time'] = e.css('.lc-event-info-item--time').text.strip
-      event['url'] = e.css('.lc-featured-event-image a').attr('href').text
-      event['image'] = e.css('.lc-featured-event-image img').attr('src').text
-      @events.push(event)
+      event['url'] = e.css('.lc-featured-event-btn').attr('href').text rescue nil
+      event['image'] = e.css('.lc-featured-event-image img').attr('src').text rescue nil
+      unless event['image'].nil?
+        @events.push(event)
+      end
     end
     respond_to do |format|
       format.json {render json: {events: @events}}
