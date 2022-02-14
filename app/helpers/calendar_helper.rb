@@ -12,16 +12,19 @@ module CalendarHelper
         end
         if ends_date == starts_date
             return starts_date + ' ' + starts_time + ' to ' + ends_time
-       else
+        else
            return starts_date + ' ' + starts_time + ' to ' + ends_date + ' ' + ends_time
-       end
+        end
     end
 
-    def today_color(starts_at, ends_at)
+    def today_color(starts_at, ends_at, state)
         starts_date = starts_at.split('@')[0]
         ends_date = ends_at.split('@')[0]
+        if state == 'Cancelled'
+            return "color: red; text-decoration: line-through red;"
+        end
         if (Date.strptime(starts_date, '%m/%d/%Y') == Date.current) || (Date.strptime(ends_date, '%m/%d/%Y') == Date.current)
-            return('green')
+            return 'color: green'
         end
     end
 
@@ -56,11 +59,13 @@ module CalendarHelper
         end 
     end
 
-    def happening_now(start_date, end_date)
-        if Time.now >= start_date.to_time && Time.now <= end_date.to_time
-            return "green"
+    def happening_now(start_date, end_date, event_state, reservation_state)
+        if (!event_state.empty? && event_state.key?('65')) || (!reservation_state.empty? && reservation_state.key?('65'))
+            return "color: red; text-decoration: line-through red;"
+        elsif Time.now >= start_date.to_time && Time.now <= end_date.to_time
+            return "color: green;"
         else
-            return "black"
+            return "color: black;"
         end
     end
 

@@ -35,6 +35,7 @@ class CalendarController < ApplicationController
       e['description'] = r.css('.views-field-field-lc-program-description').text.strip
       e['summary'] = r.css('.views-field-body-1').text.strip
       e['body'] = r.css('.views-field-body').text.strip
+      e['state'] = r.css('.views-field-field-lc-reservation-state').text.strip
       @events.push(e)
     end
     respond_to do |format|
@@ -44,13 +45,13 @@ class CalendarController < ApplicationController
   end
 
   def sign
-    url = 'https://live-traversearea.pantheonsite.io/events/feed/json'
+    url = 'https://live-traversearea.pantheonsite.io/events/feed/json?ongoing_events=show&start=12:00am'
     data = JSON.parse(open(url).read)
     @events = []
     data.each do |e|
       if !e['room'].empty?
         # Only get events for McGuire, thirlby, youth, and teen
-        if e['room'].key?('124') || e['room'].key?('125') || e['room'].key?('131') || e['room'].key?('130')
+        if e['room'].key?('124') || e['room'].key?('125') || e['room'].key?('131') || e['room'].key?('130') || e['room'].key?('162')
           @events.push(e)
         end
       end
