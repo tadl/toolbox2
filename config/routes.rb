@@ -22,6 +22,14 @@ Rails.application.routes.draw do
   match'closures/save', to: 'closures#save', via: [:get, :post]
   match'closures/delete', to: 'closures#delete', via: [:get, :post]
   match'closures/feed', to: 'closures#feed', via: [:get, :post]
+  match'numbers', to: 'numbers#index', via: [:get, :post]
+  match'numbers/new', to: 'numbers#new', via: [:get, :post]
+  match'numbers/save', to: 'numbers#save', via: [:get, :post]
+  match'numbers/edit', to: 'numbers#edit', via: [:get, :post]
+  match'numbers/update', to: 'numbers#update', via: [:get, :post]
+  match'numbers/numbers_for', to: 'numbers#numbers_for', via: [:get, :post]
+  match'numbers/update_people', to: 'numbers#update_people', via: [:get, :post]
+  match'numbers/staff_portal_load', to: 'numbers#staff_portal_load', via: [:get, :post]
   resources :stats
   root 'main#index'
   get 'trailers/index'

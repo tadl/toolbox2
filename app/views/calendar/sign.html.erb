@@ -11,28 +11,27 @@
         <img class="img-fluid mx-auto" src="https://www.tadl.org/wp-content/uploads/2022/01/floorplan.png" style="max-width: 1000px">
     </div> 
 
-
     <div class="row mt-3 pl-3">
         <h2>Upcoming Meetings & Events</h2>
     </div>
     <div class="p-3">
-    <% @events.first(6).each do |e| %>
-        <div style="<%= happening_now(e['start_date'], e['end_date'], e['event_state'], e['reservation_state']) %>">
-            <div class="row mt-1">
-                <h4><%= show_arrow(e['room'].to_a[0][0]) %> <%= e['title'] %></h4>
+        <% @events.first(6).each do |e| %>
+            <div style="<%= happening_now(e['start_date'], e['end_date'], e['event_state'], e['reservation_state']) %>">
+                <div class="row mt-1">
+                    <h4><%= show_arrow(e['room'].to_a[0][0]) %> <%= e['title'] %></h4>
+                </div>
+                <div class="row mb-2" style="font-size: 22px">
+                    <%= e['room'].to_a[0][1]  %>,          
+                    <%= today_or_tomorrow(e['start_date']) %> 
+                    <% if string_to_datetime(e['start_date']).strftime('%l:%M %P') == '12:00 am' %>
+                        All Day
+                    <% else %> 
+                        at <%= string_to_datetime(e['start_date']).strftime('%l:%M %P') %>
+                        to <%= string_to_datetime(e['end_date']).strftime('%l:%M %P') %>
+                    <% end %>
+                    <%= check_for_multiday(e['start_date'], e['end_date'])  %>
+                </div>
             </div>
-            <div class="row mb-2" style="font-size: 22px">
-                <%= e['room'].to_a[0][1]  %>,          
-                <%= today_or_tomorrow(e['start_date']) %> 
-                <% if string_to_datetime(e['start_date']).strftime('%l:%M %P') == '12:00 am' %>
-                    All Day
-                <% else %> 
-                    at <%= string_to_datetime(e['start_date']).strftime('%l:%M %P') %>
-                    to <%= string_to_datetime(e['end_date']).strftime('%l:%M %P') %>
-                <% end %>
-                <%= check_for_multiday(e['start_date'], e['end_date'])  %>
-            </div>
-        </div>
-    <% end %>
+        <% end %>
     </div>
 </div>

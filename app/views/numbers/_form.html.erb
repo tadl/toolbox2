@@ -1,0 +1,17 @@
+<div class="row mb-3">
+    <div class="col">
+        <input id="name" type="text" class="form-control" placeholder="Name" value="<%= @number.name %>">
+    </div>
+    <div class="col">
+        <input id="phone" type="phone" class="form-control" placeholder="Phone #" value="<%= @number.phone %>">
+    </div>
+    <div class="col">
+        <select id="number_type">
+            <option  <%= number_type_helper(@number.number_type,'') %>>Select Type</option>
+            <option <%= number_type_helper(@number.number_type,'help') %> value="help">Get Help</option>
+            <option <%= number_type_helper(@number.number_type,'desk') %> value="desk">Desk or Department</option>
+            <option <%= number_type_helper(@number.number_type,'branch') %> value="branch">Branch or Member</option>
+            <option <%= number_type_helper(@number.number_type,'people') %> value="people">People</option>
+        </select>
+    </div>
+</div>

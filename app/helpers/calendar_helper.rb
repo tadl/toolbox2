@@ -65,6 +65,7 @@ module CalendarHelper
         elsif Time.now >= start_date.to_time && Time.now <= end_date.to_time
             return "color: green;"
         else
+            puts 'got_here  ' + start_date.to_time.to_s + ' ' +Time.now.to_s + ' ' + end_date.to_time.to_s
             return "color: black;"
         end
     end

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Update People from Staff Portal</h1>
+<div class="mb-3">
+    <b>Warning: This will delete all exisiting numbers under the people cateogory and replace them with the latest information from the staff directory</b>
+</div>
+
+<div class="row mb-3">
+    <div class="col-sm-12">
+        <h4>Set Cookies:</h4>
+    </div>
+    <div class="col">
+        <input id="cookie_1" type="text" class="form-control" placeholder="wordpress_google_apps_login">
+    </div>
+    <div class="col">
+        <input id="cookie_2" type="text" class="form-control" placeholder="wordpress_logged_in..">
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-sm-12">
+        <button class="btn btn-success btn-lg" onclick="update_people_numbers()">Update</button>
+        <a href="/numbers">
+            <button class="btn btn-danger btn-lg">
+                Cancel
+            </button>
+        </a>
+    </div>
+</div>

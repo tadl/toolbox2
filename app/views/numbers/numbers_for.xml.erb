@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CiscoIPPhoneDirectory>
+    <Title><%= @title %></Title>
+    <% @numbers.each do |n| %>
+        <DirectoryEntry>
+            <Name><%= n.name %></Name>
+            <Telephone><%= n.phone %></Telephone>
+        </DirectoryEntry>
+    <% end %>
+    <SoftKeyItem>
+        <Name>Exit</Name>
+        <Position>1</Position>
+        <URL>http://server.whatever</URL>
+    </SoftKeyItem>
+    <SoftKeyItem>
+        <Name>Call</Name>
+        <Position>2</Position>
+        <URL>SoftKey:Select</URL>
+    </SoftKeyItem>
+</CiscoIPPhoneDirectory>

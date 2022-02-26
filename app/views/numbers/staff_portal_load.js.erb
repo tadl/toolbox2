@@ -1,0 +1,6 @@
+<% if @staff == 'error: invalid cookies' %>
+    alert('Invalide cookies')
+<% else %>
+    alert('Numbers have been successfully loaded')
+    window.location.replace('/numbers');
+<% end %>

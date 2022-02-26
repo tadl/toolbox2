@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Numbers</h1>
+<div class="row mb-3">
+    <div class="col-sm-12">
+        <h4>Editing <%= @number.name %></h4>
+    </div>
+</div>
+<%= render 'form', location: @number %>
+<div class="row mb-3">
+    <div class="col-sm-12">
+        <button class="btn btn-success btn-lg" onclick="update_number(<%= @number.id %>)">Update</button>
+        <a href="/numbers">
+            <button class="btn btn-danger btn-lg">
+                Cancel
+            </button>
+        </a>
+    </div>
+</div>
