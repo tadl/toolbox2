@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CiscoIPPhoneMenu>
+    <Title>Local Directory</Title>
+    <MenuItem>
+        <Name>Get Help</Name>
+        <URL><%= root_url %>numbers/numbers_for.xml?value=help</URL>
+    </MenuItem>
+    <MenuItem>
+        <Name>Desks / Departments</Name>
+        <URL><%= root_url %>numbers/numbers_for.xml?value=desk</URL>
+    </MenuItem>
+    <MenuItem>
+        <Name>Branches / Members</Name>
+        <URL><%= root_url %>numbers/numbers_for.xml?value=branch</URL>
+    </MenuItem>
+    <MenuItem>
+        <Name>People Lastname A-L</Name>
+        <URL><%= root_url %>numbers/numbers_for.xml?value=peopleAL</URL>
+    </MenuItem>
+    <MenuItem>
+        <Name>People Lastname M-Z</Name>
+        <URL><%= root_url %>numbers/numbers_for.xml?value=peopleMZ</URL>
+    </MenuItem>    
+    <SoftKeyItem>
+        <Name>Exit</Name>
+        <Position>1</Position>
+        <URL>SoftKey:Exit</URL>
+    </SoftKeyItem>
+</CiscoIPPhoneMenu>

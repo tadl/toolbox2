@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   match'numbers/numbers_for', to: 'numbers#numbers_for', via: [:get, :post]
   match'numbers/update_people', to: 'numbers#update_people', via: [:get, :post]
   match'numbers/staff_portal_load', to: 'numbers#staff_portal_load', via: [:get, :post]
+  match 'directory', to: 'numbers#directory', via: [:get, :post]
   resources :stats
   root 'main#index'
   get 'trailers/index'
