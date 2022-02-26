@@ -1,9 +1,11 @@
 class NumbersController < ApplicationController
     require 'mechanize'
-
+    before_action :check_super_user, :except=> [:directory, :numbers_for]
+    
     def index
         @numbers = Number.all
     end
+
     def new
         @number = Number.new
     end
@@ -73,7 +75,11 @@ class NumbersController < ApplicationController
     end
 
     private
-    
+
+    def check_super_user()
+        authenticate_super_user!
+    end
+
     def number_params
         params.permit(:name, :phone, :number_type)
     end
