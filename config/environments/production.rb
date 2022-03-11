@@ -6,6 +6,11 @@ Rails.application.configure do
   
   config.assets.enabled = true
 
+  config.ssl_options = {
+    redirect: {
+      exclude: -> request { request.path =~ /directory/ || request.path =~ /numbers_for/   }
+    }
+  }
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
