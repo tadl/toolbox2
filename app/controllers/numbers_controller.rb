@@ -14,6 +14,14 @@ class NumbersController < ApplicationController
         @number = Number.find(params[:id])
     end
 
+    def delete
+        @number = Number.find(params[:id])
+        @number.destroy
+        respond_to do |format|
+            format.js
+        end
+    end
+
     def save
         if params[:id]
             @number = Number.find(params[:id].to_i)

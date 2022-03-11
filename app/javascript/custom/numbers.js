@@ -22,3 +22,13 @@ window.update_people_numbers = function(){
     cookies['cookie_2'] = $('#cookie_2').val()
     $.post( "/numbers/staff_portal_load.js", cookies);
 }
+
+window.delete_number = function(id){
+    if (confirm('Confirm that you would like to delete this number')) {
+        var params = {}
+        params['id'] = id
+        $.post( "/numbers/delete.js", params);
+    } else {
+        return
+    }
+}

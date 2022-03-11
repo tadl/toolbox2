@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   match'numbers/new', to: 'numbers#new', via: [:get, :post]
   match'numbers/save', to: 'numbers#save', via: [:get, :post]
   match'numbers/edit', to: 'numbers#edit', via: [:get, :post]
+  match'numbers/delete', to: 'numbers#delete', via: [:get, :post]
   match'numbers/update', to: 'numbers#update', via: [:get, :post]
   match'numbers/numbers_for', to: 'numbers#numbers_for', via: [:get, :post]
   match'numbers/update_people', to: 'numbers#update_people', via: [:get, :post]

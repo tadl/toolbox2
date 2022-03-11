@@ -11,7 +11,7 @@
     <div class="col-sm-12">
         <h4>Get Help Numbers</h4>
         <% @numbers.where(number_type: 'help').order('name ASC').each do |n| %>
-            <%= n.name %> - <%= n.phone %> <a href="/numbers/edit?id=<%= n.id %>">(edit)</a>
+            <%= n.name %> - <%= n.phone %> <a href="/numbers/edit?id=<%= n.id %>"><button type="button" class="btn btn-outline-success btn-sm">Edit</button></a> <button onclick="delete_number('<%= n.id %>')" type="button" class="btn btn-outline-danger btn-sm">Delete</button>
             <br>
         <% end %>
     </div>
@@ -21,7 +21,7 @@
     <div class="col-sm-12">
         <h4>Desk / Department Numbers</h4>
         <% @numbers.where(number_type: 'desk').order('name ASC').each do |n| %>
-            <%= n.name %> - <%= n.phone %> <a href="/numbers/edit?id=<%= n.id %>">(edit)</a>
+            <%= n.name %> - <%= n.phone %> <a href="/numbers/edit?id=<%= n.id %>"><button type="button" class="btn btn-outline-success btn-sm">Edit</button></a> <button onclick="delete_number('<%= n.id %>')" type="button" class="btn btn-outline-danger btn-sm">Delete</button>
             <br>
         <% end %>
     </div>
@@ -31,7 +31,7 @@
     <div class="col-sm-12">
         <h4>Branch / Member Numbers</h4>
         <% @numbers.where(number_type: 'branch').order('name ASC').each do |n| %>
-            <%= n.name %> - <%= n.phone %> <a href="/numbers/edit?id=<%= n.id %>">(edit)</a>
+            <%= n.name %> - <%= n.phone %> <a href="/numbers/edit?id=<%= n.id %>"><button type="button" class="btn btn-outline-success btn-sm">Edit</button></a> <button onclick="delete_number('<%= n.id %>')" type="button" class="btn btn-outline-danger btn-sm">Delete</button>
             <br>
         <% end %>
     </div>
@@ -41,7 +41,7 @@
     <div class="col-sm-12">
         <h4>People Numbers</h4>
         <% @numbers.where(number_type: 'people').order('name ASC').each do |n| %>
-            <%= n.name %> - <%= n.phone %> <a href="/numbers/edit?id=<%= n.id %>">(edit)</a>
+            <%= n.name %> - <%= n.phone %> <a href="/numbers/edit?id=<%= n.id %>"><button type="button" class="btn btn-outline-success btn-sm">Edit</button></a> <button onclick="delete_number('<%= n.id %>')" type="button" class="btn btn-outline-danger btn-sm">Delete</button>
             <br>
         <% end %>
     </div>
