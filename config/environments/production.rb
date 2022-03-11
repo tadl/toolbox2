@@ -6,12 +6,6 @@ Rails.application.configure do
   
   config.assets.enabled = true
 
-  config.ssl_options = {
-    redirect: {
-      exclude: -> request {request.path == '/directory' || request.path == '/numbers/numbers_for.xml'}
-    }
-  }
-
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
@@ -53,7 +47,12 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
+  config.ssl_options = {
+    redirect: {
+      exclude: -> request {request.path == '/directory' || request.path == '/numbers/numbers_for.xml'}
+    }
+  }
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
