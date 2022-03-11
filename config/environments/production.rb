@@ -8,7 +8,7 @@ Rails.application.configure do
 
   config.ssl_options = {
     redirect: {
-      exclude: -> request { request.path =~ /directory/ || request.path =~ /numbers_for/   }
+      exclude: -> request {request.path == '/directory' || request.path == '/numbers/numbers_for.xml'}
     }
   }
 
