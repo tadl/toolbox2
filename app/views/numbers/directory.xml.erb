@@ -3,31 +3,31 @@
     <Title>Local Directory</Title>
     <MenuItem>
         <Name>Get Help</Name>
-        <URL><%= root_url %>numbers/numbers_for.xml?value=help&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
+        <URL><%= root_url.gsub('https','http') %>numbers/numbers_for.xml?value=help&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
     </MenuItem>
     <MenuItem>
         <Name>Desks / Departments</Name>
-        <URL><%= root_url %>numbers/numbers_for.xml?value=desk&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
+        <URL><%= root_url.gsub('https','http') %>numbers/numbers_for.xml?value=desk&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
     </MenuItem>
     <MenuItem>
         <Name>Branches / Members</Name>
-        <URL><%= root_url %>numbers/numbers_for.xml?value=branch&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
+        <URL><%= root_url.gsub('https','http') %>numbers/numbers_for.xml?value=branch&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
     </MenuItem>
     <MenuItem>
         <Name>People Lastnames A-F</Name>
-        <URL><%= root_url %>numbers/numbers_for.xml?value=peopleAF&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
+        <URL><%= root_url.gsub('https','http') %>numbers/numbers_for.xml?value=peopleAF&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
     </MenuItem>
     <MenuItem>
         <Name>People Lastnames G-L</Name>
-        <URL><%= root_url %>numbers/numbers_for.xml?value=peopleGL&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
+        <URL><%= root_url.gsub('https','http') %>numbers/numbers_for.xml?value=peopleGL&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
     </MenuItem>
     <MenuItem>
         <Name>People Lastnames M-O</Name>
-        <URL><%= root_url %>numbers/numbers_for.xml?value=peopleMO&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
+        <URL><%= root_url.gsub('https','http') %>numbers/numbers_for.xml?value=peopleMO&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
     </MenuItem>
     <MenuItem>
         <Name>People Lastnames P-Z</Name>
-        <URL><%= root_url %>numbers/numbers_for.xml?value=peoplePZ&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
+        <URL><%= root_url.gsub('https','http') %>numbers/numbers_for.xml?value=peoplePZ&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
     </MenuItem>            
     <SoftKeyItem>
         <Name>Exit</Name>
