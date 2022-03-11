@@ -33,8 +33,14 @@ class NumbersController < ApplicationController
     end
 
     def directory
+        unless (params[:code] && params[:code] == ENV['WORKORDER_PW']) || current_user
+            url = request.url
+            redirect_to ('/auth/google_oauth2?origin=') + url
+            return
+        end
+        response.set_header('Content-Type', 'text/xml; charset=utf-8')
         respond_to do |format|
-            format.xml
+            format.xml 
         end
     end
 
@@ -63,6 +69,12 @@ class NumbersController < ApplicationController
     end
 
     def numbers_for
+        unless (params[:code] && params[:code] == ENV['WORKORDER_PW']) || current_user
+            url = request.url
+            redirect_to ('/auth/google_oauth2?origin=') + url
+            return
+        end
+        response.set_header('Content-Type', 'text/xml; charset=utf-8')
         @numbers = number_type(params[:value])
         @title = directory_title(params[:value]) 
         respond_to do |format|
@@ -91,22 +103,32 @@ class NumbersController < ApplicationController
             return 'Branch & Members'
         elsif value == "desk"
             return 'Desks & Departments'
-        elsif value == "peopleAL"
-            return 'People A - L'
-        elsif value == "peopleMZ"
-            return 'People M - Z'
+        elsif value == "peopleAF"
+            return 'People A - F'
+        elsif value == "peopleGL"
+            return 'People G - L'
+        elsif value == "peopleMO"
+            return 'People M - 0'
+        elsif value == "peoplePZ"
+            return 'People P - Z'
         end
     end
 
     def number_type(value)
-        if value != 'peopleAL' && value != 'peopleMZ'
+        if value != 'peopleAF' && value != 'peopleGL' && value != 'peopleMO' && value != 'peoplePZ'  
             numbers = Number.where(number_type: value).order('name ASC')
         else
-            if value == 'peopleAL'
-                letter_range = ('A'..'L').to_a
+            if value == 'peopleAF'
+                letter_range = ('A'..'F').to_a
                 numbers = Number.where(number_type: 'people').where("substr(name, 1, 1) IN (?)", letter_range)
-            elsif value == 'peopleMZ'
-                letter_range = ('M'..'Z').to_a
+            elsif value == 'peopleGL'
+                letter_range = ('G'..'L').to_a
+                numbers = Number.where(number_type: 'people').where("substr(name, 1, 1) IN (?)", letter_range)
+            elsif value == 'peopleMO'
+                letter_range = ('M'..'O').to_a
+                numbers = Number.where(number_type: 'people').where("substr(name, 1, 1) IN (?)", letter_range)
+            elsif value == 'peoplePZ'
+                letter_range = ('P'..'Z').to_a
                 numbers = Number.where(number_type: 'people').where("substr(name, 1, 1) IN (?)", letter_range)
             end
         end

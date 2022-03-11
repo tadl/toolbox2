@@ -3,27 +3,35 @@
     <Title>Local Directory</Title>
     <MenuItem>
         <Name>Get Help</Name>
-        <URL><%= root_url %>numbers/numbers_for.xml?value=help</URL>
+        <URL><%= root_url %>numbers/numbers_for.xml?value=help&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
     </MenuItem>
     <MenuItem>
         <Name>Desks / Departments</Name>
-        <URL><%= root_url %>numbers/numbers_for.xml?value=desk</URL>
+        <URL><%= root_url %>numbers/numbers_for.xml?value=desk&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
     </MenuItem>
     <MenuItem>
         <Name>Branches / Members</Name>
-        <URL><%= root_url %>numbers/numbers_for.xml?value=branch</URL>
+        <URL><%= root_url %>numbers/numbers_for.xml?value=branch&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
     </MenuItem>
     <MenuItem>
-        <Name>People Lastname A-L</Name>
-        <URL><%= root_url %>numbers/numbers_for.xml?value=peopleAL</URL>
+        <Name>People Lastnames A-F</Name>
+        <URL><%= root_url %>numbers/numbers_for.xml?value=peopleAF&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
     </MenuItem>
     <MenuItem>
-        <Name>People Lastname M-Z</Name>
-        <URL><%= root_url %>numbers/numbers_for.xml?value=peopleMZ</URL>
-    </MenuItem>    
+        <Name>People Lastnames G-L</Name>
+        <URL><%= root_url %>numbers/numbers_for.xml?value=peopleGL&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
+    </MenuItem>
+    <MenuItem>
+        <Name>People Lastnames M-O</Name>
+        <URL><%= root_url %>numbers/numbers_for.xml?value=peopleMO&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
+    </MenuItem>
+    <MenuItem>
+        <Name>People Lastnames P-Z</Name>
+        <URL><%= root_url %>numbers/numbers_for.xml?value=peoplePZ&amp;code=<%=ENV['WORKORDER_PW'] %></URL>
+    </MenuItem>            
     <SoftKeyItem>
         <Name>Exit</Name>
         <Position>1</Position>
-        <URL>SoftKey:Exit</URL>
+        <URL>Init:Directories</URL>
     </SoftKeyItem>
 </CiscoIPPhoneMenu>
