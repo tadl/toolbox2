@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CiscoIPPhoneDirectory>
     <Title><%= @title %></Title>
-    <% @numbers.each do |n| %>
+    <% @numbers.order('name ASC').each do |n| %>
         <DirectoryEntry>
             <Name><%= n.name %></Name>
             <Telephone><%= n.phone %></Telephone>
