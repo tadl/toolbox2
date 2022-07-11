@@ -27,13 +27,13 @@
             <% end %>
         </div>
         <div class="col-sm-6">
+            <b>Room Setup:</b>
             <% if e['room_setup'] && !e['room_setup'].empty? %>
-                <b>Room Setup:</b>
                 <br>
                 <img src="<%= e['room_setup_picture'] %>">
                 <p><%= e['room_setup'] %></p>
-                <p><%= e['room_setup_notes'] %></p>
             <% end %>
+            <p><%= e['room_setup_notes'] %></p>
             <p><b>AV Needed:</b> <%= e['av_required'] %>
             <p><b>Equipment Needed:</b> <%= e['equipment_needed'] %>
         </div>
