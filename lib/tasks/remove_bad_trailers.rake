@@ -3,7 +3,7 @@ task :remove_bad_trailers => :environment do
     trailers = Trailer.all.where.not(youtube_url: nil)
     good_trailer_count = 0
     bad_trailer_count = 0
-    trailers.first(100).each do |t|
+    trailers.each do |t|
         is_good = t.just_check_youtube
         if is_good == true
             puts t.title + ' was good.'
