@@ -2,7 +2,7 @@ class TrailersController < ApplicationController
   require 'googleauth'
   require 'google/apis/youtube_v3'
   before_action :set_headers
-  before_action :authenticate_user!, :except => [:get_trailer]
+  # before_action :authenticate_user!, :except => [:get_trailer]
 
   def index
     @page = 'index'

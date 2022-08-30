@@ -1,4 +1,4 @@
-desc "Load trailers via CSV"
+desc "Remove trailers that are no longer in Evergreen"
 task :remove_removed => :environment do
     require 'csv'
     require 'open-uri'
@@ -9,7 +9,8 @@ task :remove_removed => :environment do
         url = 'https://catalog.tadl.org/main/details.json?id=' + r.record_id.to_s
         response = JSON.parse(open(url).read) rescue nil
         if response == nil
-            puts 'bad ' + r.title
+            puts 'bad ' + r.title + ' ' + r.record_id.to_s
+            r.destroy
         else
             puts 'good ' + r.title
         end

@@ -47,6 +47,25 @@ class Trailer < ApplicationRecord
     end
   end
 
+  # Just like method above, but for use in rake task
+  def just_check_youtube
+    client = Google::Apis::YoutubeV3::YouTubeService.new
+    auth = Google::Auth::ServiceAccountCredentials.make_creds(
+      scope: ['https://www.googleapis.com/auth/youtube']  
+    )
+    client.authorization = auth
+    verification = client.list_videos('status', id: self.youtube_url)
+    if verification.items[0]
+      if verification.items[0].status.embeddable == true
+        return true
+      else
+        return false
+      end
+    else
+        return false
+    end
+  end
+
   def update_trailer()
     self.cant_find = false
     if self.valid?
