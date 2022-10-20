@@ -107,12 +107,11 @@ class CalendarController < ApplicationController
   def get_setup_notes(url)
     agent = Mechanize.new
     agent.get('https://www.tadl.org/user')
-    puts agent.page.title
     login_form = agent.page.forms[2]
     login_form.field_with(:name => "name").value = ENV['LIBCAL_USERNAME']
     login_form.field_with(:name => "pass").value = ENV['LIBCAL_PASSWORD']
     agent.submit(login_form)
     page = agent.get('https://www.tadl.org' + url)
-    return page.css('.lc-event-room-setup-notes').text.strip.gsub('Room Setup Notes:','') rescue nil
+    return page.css('div[class*=setup-notes]').map(&:text).join.strip.gsub('Room Setup Notes:','')
   end
 end
