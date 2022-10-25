@@ -114,4 +114,5 @@ class CalendarController < ApplicationController
     page = agent.get('https://www.tadl.org' + url)
     return page.css('div[class*=setup-notes]').map(&:text).join.strip.gsub('Room Setup Notes:','')
   end
+
 end
