@@ -1,4 +1,5 @@
 class WebsiteController < ApplicationController
+    before_action :set_headers
 
     def posts
         @posts = []

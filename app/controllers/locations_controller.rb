@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+  before_action :set_headers
   before_action :authenticate_super_user!, :except => [:index]
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
