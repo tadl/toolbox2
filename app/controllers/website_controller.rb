@@ -20,7 +20,7 @@ class WebsiteController < ApplicationController
             post['featured_image_urls']['thumbnail'] = get_image_and_content[0]
             post['content'] = {}
             post['content']['rendered'] = get_image_and_content[1]
-            post['date'] = 0
+            post['date'] = Time.now
             @posts.push(post)
         end
 
