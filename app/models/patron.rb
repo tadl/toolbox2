@@ -1,2 +1,0 @@
-class Patron < ApplicationRecord
-end

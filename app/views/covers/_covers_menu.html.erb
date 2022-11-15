@@ -1,0 +1,13 @@
+<div class="mt-3">
+  <ul class="nav justify-content-center nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link <% if @page == 'index' %>active<% end %>" href="/covers/home">Records that Need Covers</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link  <% if @page == 'find' %>active<% end %>" href="/covers/add_manually">Find / Edit Cover</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link <% if @page == 'not_found' %>active<% end %>" href="/covers/not_found">Records with Covers Not Found</a>
+    </li>
+  </ul>
+</div>

@@ -1,2 +1,27 @@
-<h1>Covers#add_manually</h1>
-<p>Find me in app/views/covers/add_manually.html.erb</p>
+<%= render 'covers_menu' %>
+<div class="row mt-3">
+    <div class="input-group col-sm-4">
+        <input id="cover_search" type="text" class="form-control" placeholder="Enter Record ID" aria-label="Search for Trailer" aria-describedby="basic-addon2" value="<%= @record_id %>">
+        <div class="input-group-append">
+            <button class="btn btn-success" type="button" onclick="find_cover()">Find / Add Cover</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+  <div id="alerts" class="col-sm-5 mt-3"></div>
+</div>
+<div class="row">
+  <div id="trailer" class="col-sm-12">
+    <% if @trailer %>
+      <%= render 'trailer', t: @trailer %>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#cover_search').on('keyup', function (e) {
+    if (e.key === 'Enter' || e.keyCode === 13) {
+      find_cover()
+    }
+  });
+</script>

@@ -1,34 +1,33 @@
 class CoversController < ApplicationController
   before_action :authenticate_user!
   def home
+    @page = 'index'
     @covers = Cover.where(status: 'needs cover').paginate(:page => params[:page], :per_page => 10)
   end
 
   def new_cover
+    @page = 'find'
     @record_id = params[:record_id]
   end
 
   def not_found
+    @page = 'not_found'
     @covers = Cover.where(status: 'not found').paginate(:page => params[:page], :per_page => 10)
   end
 
   def add_manually
+    @page = 'find'
   end
 
   def load_cover
     @cover = Cover.find_by record_id: params[:record_id]
-    if @cover.nil?
+    if @cover.nil? 
       @cover = Cover.new
-      if @cover.manual_load(params[:record_id])
-        if @cover.valid? == true
-          @cover.save!
-        end
-        @message = 'success'
-      else
-        @message = "invalid record id"
-      end
-    else
-      @message = 'success'
+      @cover.record_id = params[:record_id]
+      @load_data = @cover.get_data
+    end
+    respond_to do |format|
+      format.js
     end
   end
 

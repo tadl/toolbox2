@@ -18,6 +18,7 @@
         </a>
         <% if current_user  %>
           <a class="nav-item nav-link top-link" href="/reports/index">SoftStats</a>
+          <a class="nav-item nav-link top-link" href="/covers/home">Covers</a>
           <a class="nav-item nav-link top-link" href="/trailers/index">Trailers</a>
           <% if ENV["SUPER_USERS"].split(',').include? current_user.email %>
             <a class="nav-item nav-link top-link" href="/locations">Locations</a>

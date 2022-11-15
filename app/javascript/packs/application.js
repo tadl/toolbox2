@@ -17,6 +17,7 @@ require ("custom/trailer")
 require ("custom/reports")
 require ("custom/closures")
 require ("custom/numbers")
+require ("custom/covers")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

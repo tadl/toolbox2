@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'covers/new_cover'
   get 'covers/not_found'
   get 'covers/add_manually'
-  get 'covers/load_cover'
+  match 'covers/load_cover', to: 'covers#load_cover', via: [:get, :post]
   get 'covers/cover_upload'
   get 'covers/mark_not_found'
   get 'reports/index'
