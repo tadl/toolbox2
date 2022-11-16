@@ -13,14 +13,14 @@ class WebsiteController < ApplicationController
             post['title'] = {}
             post['title']['rendered'] = p.css('.card-title').text.strip
             post['excerpt'] = {}
-            post['excerpt']['rendered'] = p.css('.field-container').css('.field-container')[1].css('p').to_html
+            post['excerpt']['rendered'] = p.css('.field-container').css('.field-container')[2].css('p').to_html
             post_url = p.css('.btn-primary').attr('href').to_s
             get_image_and_content = get_full_post(post_url)
             post['featured_image_urls'] = {}
             post['featured_image_urls']['thumbnail'] = get_image_and_content[0]
             post['content'] = {}
             post['content']['rendered'] = get_image_and_content[1]
-            post['date'] = Time.now
+            post['date'] = p.css('time').attr('datetime').to_s
             @posts.push(post)
         end
 
