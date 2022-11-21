@@ -19,7 +19,7 @@ class WebsiteController < ApplicationController
             post['content'] = {}
             post['content']['rendered'] = get_image_date_and_content[1].to_html.gsub('href="/','href="https://www.tadl.org/' )
             post['excerpt'] = {}
-            post['excerpt']['rendered'] = ActionController::Base.helpers.truncate_html(post['content']['rendered'], length: 175, omission: '...')
+            post['excerpt']['rendered'] = ActionController::Base.helpers.truncate_html(post['content']['rendered'], length: 200, omission: '...')
             
             post['date'] = get_image_date_and_content[2]
             @posts.push(post)
@@ -38,7 +38,7 @@ class WebsiteController < ApplicationController
         page = agent.get(full_url)
         partial_image = page.css('.blog-featured-img').css('img')[0].attr('src') rescue nil
         image = 'https://www.tadl.org' + partial_image
-        content = page.css('#block-website-theme-content').css('.field-container').css('p')
+        content = page.css('#block-website-theme-content').css('.field-container')[2]
         date = page.css('time').attr('datetime').to_s
         return image, content, date
     end
