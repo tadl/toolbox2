@@ -20,6 +20,7 @@ gem 'mechanize'
 gem 'mimemagic', '~> 0.3.10'
 gem 'carrierwave', '~> 2.0'
 gem 'font-awesome-sass', '~> 5.15.1'
+gem 'truncate_html'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use postges as the database for Active Record

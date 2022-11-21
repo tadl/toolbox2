@@ -380,6 +380,7 @@ GEM
       e2mmap
     tilt (2.0.10)
     trailblazer-option (0.1.2)
+    truncate_html (0.9.3)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -446,6 +447,7 @@ DEPENDENCIES
   simple_calendar (~> 2.0)
   spring
   spring-watcher-listen (~> 2.0.0)
+  truncate_html
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)

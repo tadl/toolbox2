@@ -11,16 +11,17 @@ class WebsiteController < ApplicationController
         post_blocks.first(5).each do |p|
             post = {}
             post['title'] = {}
-            post['title']['rendered'] = p.css('.card-title').text.strip
-            post['excerpt'] = {}
-            post['excerpt']['rendered'] = p.css('.field-container').css('.field-container')[2].css('p').to_html
-            post_url = p.css('.btn-primary').attr('href').to_s
-            get_image_and_content = get_full_post(post_url)
+            post['title']['rendered'] = p.css('a').text.strip
+            post_url = p.css('a').attr('href').to_s
+            get_image_date_and_content = get_full_post(post_url)
             post['featured_image_urls'] = {}
-            post['featured_image_urls']['thumbnail'] = get_image_and_content[0]
+            post['featured_image_urls']['thumbnail'] = get_image_date_and_content[0]
             post['content'] = {}
-            post['content']['rendered'] = get_image_and_content[1]
-            post['date'] = p.css('time').attr('datetime').to_s
+            post['content']['rendered'] = get_image_date_and_content[1].to_html.gsub('href="/','href="https://www.tadl.org/' )
+            post['excerpt'] = {}
+            post['excerpt']['rendered'] = ActionController::Base.helpers.truncate_html(post['content']['rendered'], length: 175, omission: '...')
+            
+            post['date'] = get_image_date_and_content[2]
             @posts.push(post)
         end
 
@@ -37,8 +38,9 @@ class WebsiteController < ApplicationController
         page = agent.get(full_url)
         partial_image = page.css('.blog-featured-img').css('img')[0].attr('src') rescue nil
         image = 'https://www.tadl.org' + partial_image
-        content = page.css('#block-website-theme-content').css('.field-container').css('p').to_html.gsub('href="/','href="https://www.tadl.org/' )
-        return image, content
+        content = page.css('#block-website-theme-content').css('.field-container').css('p')
+        date = page.css('time').attr('datetime').to_s
+        return image, content, date
     end
 
 end
