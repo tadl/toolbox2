@@ -1,1 +1,5 @@
-alert('cheese')
+<% if @error %>
+    $('#alerts').html('<%= escape_javascript( @error ) %>')
+<% else %>
+    $('#cover').html('<%= escape_javascript( render "cover", c: @cover ) %>')
+<% end %>

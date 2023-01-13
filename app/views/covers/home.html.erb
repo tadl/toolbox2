@@ -1,1 +1,4 @@
 <%= render 'covers_menu' %>
+<% @covers.each do |c| %>
+    <%= render 'cover', c: c %>
+<% end %>

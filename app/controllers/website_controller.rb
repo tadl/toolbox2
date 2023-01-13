@@ -8,12 +8,12 @@ class WebsiteController < ApplicationController
         page = agent.get('https://www.tadl.org/posts?field_bl_type_target_id%5B294%5D=294')
         post_blocks = page.css('.card')
 
-        post_blocks.first(5).each do |p|
+        post_blocks.first(6).each do |p|
             post = {}
             post['title'] = {}
             post['title']['rendered'] = p.css('a').text.strip
-            post_url = p.css('a').attr('href').to_s
-            get_image_date_and_content = get_full_post(post_url)
+            post['post_url'] = p.css('a').attr('href').to_s
+            get_image_date_and_content = get_full_post(post['post_url'])
             post['featured_image_urls'] = {}
             post['featured_image_urls']['thumbnail'] = get_image_date_and_content[0]
             post['content'] = {}

@@ -1,0 +1,52 @@
+<div id="card_<%= c.record_id %>" class="card mt-3">
+    <div class="card-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2">
+                    <img id="t_<%= c.record_id %>" class="img-fluid" src="https://catalog.tadl.org/opac/extras/ac/jacket/large/r/<%= c.record_id.to_s %>" onerror="bad_image('<%= c.record_id %>')">
+                </div>
+                <div class="col-lg-10">
+                    <h5 class="card-title"><%= c.title %></h5>
+                    <a class="btn btn-primary mb-3" role="button" href="https://catalog.tadl.org/main/details?id=<%= c.record_id %>" target="_blank">
+                        View in Catalog
+                    </a>
+                    <% if c.artist || c.publisher || c.release_date %>
+                        <p>
+                            <% if c.artist %>
+                                <b><%= c.artist %> | </b>
+                            <% end %>
+                            <% if c.publisher %>
+                                <b><%= c.publisher %> | </b>
+                            <% end %>
+                            <% if c.release_date %>
+                                <b><%= c.release_date %> | </b>
+                            <% end %>
+                        </p>
+                    <% end %>
+                    <% if c.abstract %>
+                        <p class="card-text"><b>Abstract:</b> <%= c.abstract %></p>
+                    <% end %>
+                    <% if c.track_list %>
+                        <p class="card-text"><b>Track List:</b> <%= c.track_list %></p>
+                    <% end %>
+                    <div class="row">
+                        <div id="alerts_<%= c.record_id %>" class="col-sm-8">
+                        </div>
+                    </div>
+                    <div id="form_<%= c.record_id %>">
+                        <label>Enter Image URL:</label>
+	                    <%= text_field_tag 'remote_coverart_url', '' , :id => 'url_' + @record_id.to_s %>
+	                    <br>
+	                    <label>Or Upload File:</label>
+	                    <%= file_field_tag 'coverart', :id => 'file_' + @record_id.to_s  %>
+                        <br>
+                        <div class="preview_<%= c.record_id %>">
+                            <a class="btn btn-warning mb-3">Preview Cover</a>
+                            <a class="btn btn-success mb-3">Upload Cover</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
