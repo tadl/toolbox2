@@ -12,7 +12,7 @@ class WebsiteController < ApplicationController
             post = {}
             post['title'] = {}
             post['title']['rendered'] = p.css('a').text.strip
-            post['post_url'] = p.css('a').attr('href').to_s
+            post['post_url'] = 'https://www.tadl.org' + (p.css('a').attr('href').to_s)
             get_image_date_and_content = get_full_post(post['post_url'])
             post['featured_image_urls'] = {}
             post['featured_image_urls']['thumbnail'] = get_image_date_and_content[0]
@@ -33,9 +33,8 @@ class WebsiteController < ApplicationController
     private
 
     def get_full_post(url)
-        full_url = 'https://www.tadl.org' + url
         agent = Mechanize.new
-        page = agent.get(full_url)
+        page = agent.get(url)
         partial_image = page.css('.blog-featured-img').css('img')[0].attr('src') rescue nil
         image = 'https://www.tadl.org' + partial_image
         content = page.css('#block-website-theme-content').css('.field-container')[2]
