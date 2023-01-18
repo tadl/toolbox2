@@ -87,6 +87,7 @@ GEM
       dry-validation (~> 1.0, >= 1.0.0)
     connection_pool (2.2.5)
     crass (1.0.6)
+    dalli (3.2.1)
     declarative (0.0.20)
     deep_merge (1.2.2)
     domain_name (0.5.20190701)
@@ -424,6 +425,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   carrierwave (~> 2.0)
   config
+  dalli
   dotenv-rails
   font-awesome-sass (~> 5.15.1)
   google-api-client (~> 0.8)

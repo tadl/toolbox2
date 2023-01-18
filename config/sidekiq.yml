@@ -1,4 +1,7 @@
 :schedule:
   fetch_trailers:
-    every: '3m'
+    every: '15m'
     class: FetchTrailers
+  fetch_posts:
+    every: '15m'
+    class: FetchPosts

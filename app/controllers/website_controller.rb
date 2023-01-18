@@ -2,29 +2,32 @@ class WebsiteController < ApplicationController
     before_action :set_headers
 
     def posts
-        @posts = []
 
-        agent = Mechanize.new
-        page = agent.get('https://www.tadl.org/posts?field_bl_type_target_id%5B294%5D=294')
-        post_blocks = page.css('.card')
+        @posts = Rails.cache.fetch('posts')
+        if @posts.nil?
+            @posts = []
 
-        post_blocks.first(6).each do |p|
-            post = {}
-            post['title'] = {}
-            post['title']['rendered'] = p.css('a').text.strip
-            post['post_url'] = 'https://www.tadl.org' + (p.css('a').attr('href').to_s)
-            get_image_date_and_content = get_full_post(post['post_url'])
-            post['featured_image_urls'] = {}
-            post['featured_image_urls']['thumbnail'] = get_image_date_and_content[0]
-            post['content'] = {}
-            post['content']['rendered'] = get_image_date_and_content[1].to_html.gsub('href="/','href="https://www.tadl.org/' ).gsub('src="/','src="https://www.tadl.org/')
-            post['excerpt'] = {}
-            post['excerpt']['rendered'] = ActionController::Base.helpers.truncate_html(post['content']['rendered'], length: 200, omission: '...')
-            
-            post['date'] = get_image_date_and_content[2]
-            @posts.push(post)
+            agent = Mechanize.new
+            page = agent.get('https://www.tadl.org/posts?field_bl_type_target_id%5B294%5D=294')
+            post_blocks = page.css('.card')
+
+            post_blocks.first(6).each do |p|
+                post = {}
+                post['title'] = {}
+                post['title']['rendered'] = p.css('a').text.strip
+                post['post_url'] = 'https://www.tadl.org' + (p.css('a').attr('href').to_s)
+                get_image_date_and_content = get_full_post(post['post_url'])
+                post['featured_image_urls'] = {}
+                post['featured_image_urls']['thumbnail'] = get_image_date_and_content[0]
+                post['content'] = {}
+                post['content']['rendered'] = get_image_date_and_content[1].to_html.gsub('href="/','href="https://www.tadl.org/' ).gsub('src="/','src="https://www.tadl.org/')
+                post['excerpt'] = {}
+                post['excerpt']['rendered'] = ActionController::Base.helpers.truncate_html(post['content']['rendered'], length: 200, omission: '...')
+
+                post['date'] = get_image_date_and_content[2]
+                @posts.push(post)
+            end
         end
-
         respond_to do |format|
             format.json {render json: @posts.to_json}
         end
