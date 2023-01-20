@@ -31,7 +31,7 @@ class FetchEvents < ApplicationJob
                 event = {}
                 event['title'] = e['title']
                 event['start_date'] = e['start_date']
-                event['location'] = v[:name]
+                event['location'] = process_location(e['branch'])
                 event['image'] = e['image']
                 event['url'] = e['url']
                 @events.push(event)
@@ -41,5 +41,25 @@ class FetchEvents < ApplicationJob
             @test = Rails.cache.fetch(('events_' + v[:code]))
             puts @test.to_s
         end
+    end
+
+    private
+    
+    def process_location(locations)
+        location = ''
+        i = 0
+        locations.each do |k,v|
+            i += 1
+        end
+        if i > 1
+            locations.each do |k,v|
+                location += v + ', '
+            end
+        else
+            locations.each do |k,v|
+               location +=  v
+            end 
+        end
+        return location
     end
   end
