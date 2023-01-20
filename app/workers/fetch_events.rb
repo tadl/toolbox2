@@ -19,7 +19,7 @@ class FetchEvents < ApplicationJob
         @venues.each do |v|
             @events_and_venues = {}
             @events_and_venues['all_venues'] = @venues
-            @events_and_venues['current_venu'] = v
+            @events_and_venues['current_venue'] = v
             if v['code'] != 'all'
                 url = base_url + '&branches=' + v[:code]
             else
@@ -31,7 +31,7 @@ class FetchEvents < ApplicationJob
                 event = {}
                 event['title'] = e['title']
                 event['start_date'] = e['start_date']
-                event['location'] = v['name']
+                event['location'] = v[:name]
                 event['image'] = e['image']
                 event['url'] = e['url']
                 @events.push(event)
