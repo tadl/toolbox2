@@ -33,6 +33,18 @@ class WebsiteController < ApplicationController
         end
     end
 
+    def mobile_events
+        venue = params[:venue]
+        if venue.nil? || venue == 'all'
+            @events = Rails.cache.fetch('events_all')
+        else
+            @events = Rails.cache.fetch(('events_' + venue))
+        end
+        respond_to do |format|
+            format.json {render json: @events.to_json}
+        end
+    end
+
     private
 
     def get_full_post(url)

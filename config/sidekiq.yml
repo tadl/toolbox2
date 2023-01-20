@@ -5,3 +5,6 @@
   fetch_posts:
     every: '15m'
     class: FetchPosts
+  fetch_events:
+    every: '15m'
+    class: FetchEvents
