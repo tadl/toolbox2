@@ -34,6 +34,7 @@ class FetchEvents < ApplicationJob
                 event['location'] = process_location(e['branch'])
                 event['image'] = e['image']
                 event['url'] = e['url']
+                event['description'] = ActionView::Base.full_sanitizer.sanitize(e['description'])
                 @events.push(event)
             end
             @events_and_venues['events'] = @events

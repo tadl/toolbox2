@@ -21,9 +21,9 @@ class FetchPosts < ApplicationJob
             post['featured_image_urls']['thumbnail'] = get_image_date_and_content[0]
             post['content'] = {}
             post['content']['rendered'] = get_image_date_and_content[1].to_html.gsub('href="/','href="https://www.tadl.org/' ).gsub('src="/','src="https://www.tadl.org/')
+            post['content']['text'] = ActionView::Base.full_sanitizer.sanitize(post['content']['rendered'])
             post['excerpt'] = {}
-            post['excerpt']['rendered'] = ActionController::Base.helpers.truncate_html(post['content']['rendered'], length: 200, omission: '...')
-            
+            post['excerpt']['rendered'] = ActionController::Base.helpers.truncate_html(post['content']['rendered'], length: 300, omission: '...')
             post['date'] = get_image_date_and_content[2]
             @posts.push(post)
         end
