@@ -2,7 +2,7 @@ class ReportsController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @departments = Department.all
+    @departments = Department.all.order('name ASC')
   end
 
   def show_calendar

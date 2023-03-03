@@ -14,11 +14,10 @@
     <nav class="navbar navbar-dark bg-primary">
       <div class="container-xl">
         <a class="navbar-brand" href="#">
-          TADL Toolbox!
+          TADL Toolbox 2
         </a>
         <% if current_user  %>
           <a class="nav-item nav-link top-link" href="/reports/index">SoftStats</a>
-          <a class="nav-item nav-link top-link" href="/covers/home">Covers</a>
           <a class="nav-item nav-link top-link" href="/trailers/index">Trailers</a>
           <% if ENV["SUPER_USERS"].split(',').include? current_user.email %>
             <a class="nav-item nav-link top-link" href="/locations">Locations</a>
