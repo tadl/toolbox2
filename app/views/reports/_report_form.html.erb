@@ -6,7 +6,27 @@
 <div id="report_date" style="display: none">
   <%= @date %>
 </div>
-<% if @department.name == "Administration" || @department.name == "Adult/Reference" || @department.name == "Talking Book Library" || @department.name == "Sight and Sound" || @department.name == "Teen Services" || @department.name == "Youth Services" || @department.name == "East Bay" || @department.name == "Kingsley" %>
+<div id="messages"></div>
+<button type="button" class="btn btn-success" onclick="reports_submitt()">Save</button>
+<% if @department.name == "Adult/Reference" || @department.name == "Talking Book Library" || @department.name == "Local History" || @department.name == "Sight and Sound" || @department.name == "Teen Services" || @department.name == "Youth Services" || @department.name == "East Bay" || @department.name == "Kingsley" %>
+  <h2>Questions</h2>
+  <h4 class="banner">Reference</h4>
+  <div class="row">
+    <div class="col col-xs-3">
+      <div class="form-group"><label for="questionsreferencewalkin">Walkin</label><input type="text" class="form-control" value="<%= check_for_value('questionsreferencewalkin', @reports) %>" id="questionsreferencewalkin"></div>
+    </div>
+    <div class="col col-xs-3">
+      <div class="form-group"><label for="questionsreferencephone">Phone</label><input type="text" class="form-control" value="<%= check_for_value('questionsreferencephone', @reports) %>" id="questionsreferencephone"></div>
+    </div>
+    <div class="col col-xs-3">
+      <div class="form-group"><label for="questionsreferencedigital">Digital</label><input type="text" class="form-control" value="<%= check_for_value('questionsreferencedigital', @reports) %>" id="questionsreferencedigital"></div>
+    </div>
+    <div class="col col-xs-3">
+      <div class="form-group"><label for="questionsreferencepostal">Postal</label><input type="text" class="form-control" value="<%= check_for_value('questionsreferencepostal', @reports) %>" id="questionsreferencepostal"></div>
+    </div>
+  </div>
+<% end %>
+<% if @department.name == "Administration" || @department.name == "Adult/Reference" || @department.name == "Local History" || @department.name == "Talking Book Library" || @department.name == "Sight and Sound" || @department.name == "Teen Services" || @department.name == "Youth Services" || @department.name == "East Bay" || @department.name == "Kingsley" %>
   <h2>Programs (by audience)</h2>
   <h4 class="banner">Count</h4>
   <div class="row">
@@ -78,7 +98,7 @@
     </div>
   </div>
 <% end %>
-<% if @department.name == "Administration" || @department.name == "Adult/Reference" || @department.name == "Talking Book Library" || @department.name == "Sight and Sound" || @department.name == "Teen Services" || @department.name == "Youth Services" || @department.name == "East Bay" || @department.name == "Kingsley" %>
+<% if @department.name == "Administration" || @department.name == "Adult/Reference" || @department.name == "Local History" || @department.name == "Talking Book Library" || @department.name == "Sight and Sound" || @department.name == "Teen Services" || @department.name == "Youth Services" || @department.name == "East Bay" || @department.name == "Kingsley" %>
   <h2>Virtual Programs</h2>
   <h4 class="banner">Count</h4>
   <div class="row">
@@ -117,24 +137,6 @@
     </div>
     <div class="col col-xs-4">
       <div class="form-group"><label for="virtualrecordedprogramviews">Views (Do not include live views)</label><input type="text" class="form-control" value="<%= check_for_value('virtualrecordedprogramviews', @reports) %>" id="virtualrecordedprogramviews"></div>
-    </div>
-  </div>
-<% end %>
-<% if @department.name == "Adult/Reference" || @department.name == "Talking Book Library" || @department.name == "Sight and Sound" || @department.name == "Teen Services" || @department.name == "Youth Services" || @department.name == "East Bay" || @department.name == "Kingsley" %>
-  <h2>Questions</h2>
-  <h4 class="banner">Reference</h4>
-  <div class="row">
-    <div class="col col-xs-3">
-      <div class="form-group"><label for="questionsreferencewalkin">Walkin</label><input type="text" class="form-control" value="<%= check_for_value('questionsreferencewalkin', @reports) %>" id="questionsreferencewalkin"></div>
-    </div>
-    <div class="col col-xs-3">
-      <div class="form-group"><label for="questionsreferencephone">Phone</label><input type="text" class="form-control" value="<%= check_for_value('questionsreferencephone', @reports) %>" id="questionsreferencephone"></div>
-    </div>
-    <div class="col col-xs-3">
-      <div class="form-group"><label for="questionsreferencedigital">Digital</label><input type="text" class="form-control" value="<%= check_for_value('questionsreferencedigital', @reports) %>" id="questionsreferencedigital"></div>
-    </div>
-    <div class="col col-xs-3">
-      <div class="form-group"><label for="questionsreferencepostal">Postal</label><input type="text" class="form-control" value="<%= check_for_value('questionsreferencepostal', @reports) %>" id="questionsreferencepostal"></div>
     </div>
   </div>
 <% end %>
@@ -250,5 +252,3 @@
     </div>
   </div>
 <% end %>
-<div id="messages"></div>
-<button type="button" class="btn btn-success" onclick="reports_submitt()">Save</button>
