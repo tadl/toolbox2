@@ -60,7 +60,7 @@ module CalendarHelper
     end
 
     def happening_now(start_date, end_date, event_state, reservation_state)
-        if (!event_state.empty? && event_state.key?('65')) || (!reservation_state.empty? && reservation_state.key?('65'))
+        if (event_state && !event_state.empty? && event_state.key?('65')) || (reservation_state && !reservation_state.empty? && reservation_state.key?('65'))
             return "color: red; text-decoration: line-through red;"
         elsif Time.now >= start_date.to_time && Time.now <= end_date.to_time
             return "color: green;"
