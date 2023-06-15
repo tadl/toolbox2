@@ -41,6 +41,7 @@ class WebsiteController < ApplicationController
             @events = Rails.cache.fetch(('events_' + venue))
         end
         respond_to do |format|
+            format.html
             format.json {render json: @events.to_json}
         end
     end
