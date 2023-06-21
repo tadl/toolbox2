@@ -5,7 +5,7 @@ class FetchEvents < ApplicationJob
   
     def perform
         puts "fetching events..."
-        base_url = 'https://www.tadl.org/events/feed/json?ongoing_events=show&start=12:00am&end=1month'
+        base_url = 'https://www.tadl.org/events/feed/json?ongoing_events=show&start=12:00am&end=2month'
         @venues = [
             { code: 'all', name: 'All'},
             { code: '89', name: 'Traverse City' },
