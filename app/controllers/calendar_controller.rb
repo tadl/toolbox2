@@ -36,7 +36,7 @@ class CalendarController < ApplicationController
       e['description'] = r.css('.views-field-field-lc-program-description').text.strip
       e['summary'] = r.css('.views-field-body-1').text.strip
       e['body'] = r.css('.views-field-body').text.strip
-      e['state'] = r.css('.views-field-moderation-state').text.strip
+      e['state'] = r.css('.views-field-moderation-state').text.strip.split(' ')[0]
       @events.push(e)
     end
     respond_to do |format|
