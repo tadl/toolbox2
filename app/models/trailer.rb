@@ -6,7 +6,7 @@ class Trailer < ApplicationRecord
   require 'google/apis/youtube_v3'
 
   def get_data
-    url = 'http://mr-v2.catalog.tadl.org/osrf-gateway-v1?service=open-ils.search&method=open-ils.search.biblio.record.mods_slim.retrieve&locale=en-US&param=' + self.record_id.to_s
+    url = 'https://catalog.tadl.org/osrf-gateway-v1?service=open-ils.search&method=open-ils.search.biblio.record.mods_slim.retrieve&locale=en-US&param=' + self.record_id.to_s
     puts url
     record_details = JSON.parse(open(url).read)
     if record_details["payload"][0]['__p']
