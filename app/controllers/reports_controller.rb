@@ -25,9 +25,9 @@ class ReportsController < ApplicationController
   def show_report_form
     @department = Department.find(params[:department_id])
     @date = params[:date]
-    report_date = Date.parse params[:date]
-    @fancy_date = report_date.strftime("%B %d %Y")
-    @reports = Report.where(department_id: @department.id, report_date: report_date).to_a
+    @report_date = Date.parse params[:date]
+    @fancy_date = @report_date.strftime("%B %d %Y")
+    @reports = Report.where(department_id: @department.id, report_date: @report_date).to_a
     respond_to do |format|
       format.js
     end
