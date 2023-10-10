@@ -61,9 +61,9 @@
       <div class="form-group"><label for="programsslcteencount">Summer Challenge Teen (12-18)</label><input type="text" class="form-control" value="<%= check_for_value('programsslcteencount', @reports) %>" id="programsslcteencount"></div>
     </div>
     <% if @report_date < Date.new(2023, 10, 10)  %>
-    <div class="col-3">
-      <div class="form-group"><label for="takehomekits">Take Home Kits</label><input type="text" class="form-control" value="<%= check_for_value('takehomekits', @reports) %>" id="takehomekits"></div>
-    </div>
+      <div class="col-3">
+        <div class="form-group"><label for="takehomekits">Take Home Kits</label><input type="text" class="form-control" value="<%= check_for_value('takehomekits', @reports) %>" id="takehomekits"></div>
+      </div>
     <% end %>
   </div>
   <h4 class="banner">Attendees</h4>
