@@ -16,7 +16,7 @@ class CalendarController < ApplicationController
     report_page = agent.get('https://tadl.org/admin/reports/calendar/events?title=&field_lc_reservation_state_target_id_op=or&status=All&uid=&created%5Bmin%5D=&created%5Bmax%5D=&field_lc_event_date_value%5Bmin%5D=Today&field_lc_event_date_value%5Bmax%5D=30+days&field_lc_room_target_id%5B%5D=124&field_lc_ignore_conflicts_value=All&field_lc_contact_name_value=&field_lc_contact_email_value=&field_lc_contact_phone_value=&field_lc_people_in_attendance_value=All&sort_by=field_lc_event_date_value&sort_order=ASC')
     event_table = report_page.css('.views-table').css('tbody')
     @events = []
-    event_table.css('tr').first(5).each do |r|
+    event_table.css('tr').first(6).each do |r|
       e = {}
       e['title'] = r.css('.views-field-title').text.strip
       e['url'] = r.css('.views-field-title').css('a').attr('href').value

@@ -20,7 +20,7 @@ module CalendarHelper
     def today_color(starts_at, ends_at, state)
         starts_date = starts_at.split('@')[0]
         ends_date = ends_at.split('@')[0]
-        if state == 'Cancelled'
+        if state == 'Cancelled' || state == 'Declined'
             return "color: red; text-decoration: line-through red;"
         end
         if (Date.strptime(starts_date, '%m/%d/%Y') == Date.current) || (Date.strptime(ends_date, '%m/%d/%Y') == Date.current)
