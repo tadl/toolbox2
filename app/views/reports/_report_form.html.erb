@@ -192,54 +192,12 @@
   </div>
 <% end %>
 
-<% if @department.name == "Sight and Sound" %>
+<% if @department.name == "Adult/Reference" %>
   <h2>Meeting Rooms</h2>
-  <h4 class="banner">McGuire Room</h4>
+  <h4 class="banner">Study Room A, B & C</h4>
   <div class="row">
-    <div class="col col-xs-4">
-      <div class="form-group"><label for="meetingsmcguiretadl">TADL</label><input type="text" class="form-control" value="<%= check_for_value('meetingsmcguiretadl', @reports) %>" id="meetingsmcguiretadl"></div>
-    </div>
-    <div class="col col-xs-4">
-      <div class="form-group"><label for="meetingsmcguirepaid">Paid</label><input type="text" class="form-control" value="<%= check_for_value('meetingsmcguirepaid', @reports) %>" id="meetingsmcguirepaid"></div>
-    </div>
-    <div class="col col-xs-4">
-      <div class="form-group"><label for="meetingsmcguireunpaid">Unpaid</label><input type="text" class="form-control" value="<%= check_for_value('meetingsmcguireunpaid', @reports) %>" id="meetingsmcguireunpaid"></div>
-    </div>
-  </div>
-  <h4 class="banner">Thirlby Room</h4>
-  <div class="row">
-    <div class="col col-xs-4">
-      <div class="form-group"><label for="meetingsthirlbytadl">TADL</label><input type="text" class="form-control" value="<%= check_for_value('meetingsthirlbytadl', @reports) %>" id="meetingsthirlbytadl"></div>
-    </div>
-    <div class="col col-xs-4">
-      <div class="form-group"><label for="meetingsthirlbypaid">Paid</label><input type="text" class="form-control" value="<%= check_for_value('meetingsthirlbypaid', @reports) %>" id="meetingsthirlbypaid"></div>
-    </div>
-    <div class="col col-xs-4">
-      <div class="form-group"><label for="meetingsthirlbyunpaid">Unpaid</label><input type="text" class="form-control" value="<%= check_for_value('meetingsthirlbyunpaid', @reports) %>" id="meetingsthirlbyunpaid"></div>
-    </div>
-  </div>
-  <h4 class="banner">Study Room D</h4>
-  <div class="row">
-    <div class="col col-xs-4">
-      <div class="form-group"><label for="meetingsrmdtadl">TADL</label><input type="text" class="form-control" value="<%= check_for_value('meetingsrmdtadl', @reports) %>" id="meetingsrmdtadl"></div>
-    </div>
-    <div class="col col-xs-4">
-      <div class="form-group"><label for="meetingsrmdpaid">Paid</label><input type="text" class="form-control" value="<%= check_for_value('meetingsrmdpaid', @reports) %>" id="meetingsrmdpaid"></div>
-    </div>
-    <div class="col col-xs-4">
-      <div class="form-group"><label for="meetingsrmdunpaid">Unpaid</label><input type="text" class="form-control" value="<%= check_for_value('meetingsrmdunpaid', @reports) %>" id="meetingsrmdunpaid"></div>
-    </div>
-  </div>
-  <h4 class="banner">Attendees</h4>
-  <div class="row">
-    <div class="col col-xs-4">
-      <div class="form-group"><label for="attendeesmcguire">McGuire</label><input type="text" class="form-control" value="<%= check_for_value('attendeesmcguire', @reports) %>" id="attendeesmcguire"></div>
-    </div>
-    <div class="col col-xs-4">
-      <div class="form-group"><label for="attendeesthirlby">Thirlby</label><input type="text" class="form-control" value="<%= check_for_value('attendeesthirlby', @reports) %>" id="attendeesthirlby"></div>
-    </div>
-    <div class="col col-xs-4">
-      <div class="form-group"><label for="attendeesrmd">Study Room D</label><input type="text" class="form-control" value="<%= check_for_value('attendeesrmd', @reports) %>" id="attendeesrmd"></div>
+    <div class="col-2 col-xs-4">
+      <div class="form-group"><label for="meetingroomsabc">Daily Uses</label><input type="text" class="form-control" value="<%= check_for_value('meetingroomsabc', @reports) %>" id="meetingroomsabc"></div>
     </div>
   </div>
 <% end %>
