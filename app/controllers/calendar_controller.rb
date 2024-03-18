@@ -27,7 +27,7 @@ class CalendarController < ApplicationController
         e['ends_at'] = r.css('.views-field-field-lc-event-date-1').text.strip
         e['room_setup'] = r.css('.views-field-field-lc-room-setup').text.strip.split("\n")[0]
         e['room_setup_picture'] = 'https://live-traversearea.pantheonsite.io/' + r.search('.views-field-field-lc-room-setup img')[0].attr('src') rescue nil
-        e['room_setup_notes'] = get_setup_notes(e['url'])
+        e['room_setup_notes'] = get_setup_notes(e['url']) rescue nil
         e['expected_attendance'] = r.css('.views-field-field-lc-expected-attendance').text.strip
         e['contact_name'] = r.css('.views-field-field-lc-contact-name').text.strip
         e['contact_email'] = r.css('.views-field-field-lc-contact-email').text.strip
@@ -50,8 +50,8 @@ class CalendarController < ApplicationController
   end
 
   def sign
-    url = 'https://live-traversearea.pantheonsite.io/events/feed/json?ongoing_events=show&start=12:00am'
-    data = JSON.parse(open(url).read)
+    url = 'https://www.tadl.org/events/feed/json?ongoing_events=show&start=12:00am&end=7day'
+    data = JSON.parse(open(url).read) rescue []
     @events = []
     data.each do |e|
       if !e['room'].empty?
