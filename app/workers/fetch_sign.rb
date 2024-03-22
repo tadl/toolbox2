@@ -15,7 +15,8 @@ class FetchSign < ApplicationJob
             end
           end
         end
-        Rails.cache.write('sign_events_last_update', Time.now.to_s)
-        Rails.cache.write('sign_events', @events)
+        if @events != []
+            Rails.cache.write('sign_events_last_update', Time.now.to_s)
+            Rails.cache.write('sign_events', @events)
         end
     end

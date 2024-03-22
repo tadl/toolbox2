@@ -71,7 +71,6 @@ class CalendarController < ApplicationController
     @events = Rails.cache.fetch('sign_events')
     @last_update = Rails.cache.fetch('sign_events_last_update')
     respond_to do |format|
-      format.html {render layout: 'calendar'}
       format.json {render json: {events: @events, last_update: @last_update}}
     end
   end
