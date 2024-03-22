@@ -20,3 +20,4 @@ class FetchSign < ApplicationJob
             Rails.cache.write('sign_events', @events)
         end
     end
+end
