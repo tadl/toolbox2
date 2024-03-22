@@ -4,7 +4,7 @@ class FetchEvents < ApplicationJob
     self.queue_adapter = :sidekiq
   
     def perform
-        puts "fetching events..."
+        puts "fetching events for sign..."
         base_url = 'https://www.tadl.org/events/feed/json?ongoing_events=show&start=12:00am&end=2month'
         @venues = [
             { code: 'all', name: 'All'},

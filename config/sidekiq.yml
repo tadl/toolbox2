@@ -8,3 +8,6 @@
   fetch_events:
     every: '15m'
     class: FetchEvents
+  fetch_sign:
+    every: '3m'
+    class: FetchSign

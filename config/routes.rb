@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'calendar/index'
   get 'calendar/workorders'
   get 'calendar/sign'
+  get 'calendar/sign_test'
   resources :infractions
   resources :locations
   get 'covers/home'
