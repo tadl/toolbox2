@@ -45,7 +45,7 @@ module CalendarHelper
 
     def check_for_multiday(start_date, end_date)
         if start_date.to_date != end_date.to_date
-            return today_or_tomorrow(end_date)
+            return "until " + today_or_tomorrow(end_date)
         else
             return ''
         end

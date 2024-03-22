@@ -1,6 +1,6 @@
 :schedule:
   fetch_trailers:
-    every: '15m'
+    every: '30m'
     class: FetchTrailers
   fetch_posts:
     every: '15m'
@@ -9,5 +9,5 @@
     every: '15m'
     class: FetchEvents
   fetch_sign:
-    every: '3m'
+    every: '15m'
     class: FetchSign
