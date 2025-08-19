@@ -3,7 +3,7 @@ class WebsiteController < ApplicationController
 
     def posts
 
-        # @posts = Rails.cache.fetch('posts')
+        @posts = Rails.cache.fetch('posts')
         if @posts.nil?
             @posts = []
 
