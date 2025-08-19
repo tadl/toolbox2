@@ -12,5 +12,5 @@
     every: '15m'
     class: FetchSign
   fetch_workorders:
-    every: '3m'
+    every: '15m'
     class: FetchWorkorders

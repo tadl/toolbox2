@@ -39,7 +39,7 @@ class FetchPosts < ApplicationJob
         agent = Mechanize.new
         page = agent.get(url)
         partial_image = page.css('.blog-featured-img').css('img')[0].attr('src') rescue nil
-        image = 'https://www.tadl.org' + partial_image
+        image = partial_image
         content = page.css('#block-website-theme-content').css('.field-container')[2]
         date = page.css('time').attr('datetime').to_s
         return image, content, date
