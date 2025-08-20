@@ -1,5 +1,16 @@
 FROM ruby:2.6.3
 
+# Point EOL Debian buster to archive mirrors so apt can work
+RUN sed -i 's|deb.debian.org/debian|archive.debian.org/debian|g' /etc/apt/sources.list \
+ && sed -i 's|security.debian.org/debian-security|archive.debian.org/debian-security|g' /etc/apt/sources.list \
+ && sed -i 's|^deb http://.* buster-updates|deb http://archive.debian.org/debian buster-updates main|g' /etc/apt/sources.list
+
+# Update with expired metadata allowed, then install build tools
+RUN apt-get -o Acquire::Check-Valid-Until=false update \
+ && apt-get install -y --no-install-recommends \
+      curl gnupg build-essential python3 make g++ git ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+
 # OS deps (add build tools!)
 RUN apt-get --allow-releaseinfo-change update \
  && apt-get install -y --no-install-recommends \
